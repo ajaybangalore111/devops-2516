@@ -1,0 +1,89 @@
+12th Nov 2025
+=============
+
+    -> DevOps 
+
+        -> What Is DevOps ?
+
+            -> DevOps is a set of "Practices" & "Tools"
+
+                -> To implement DevOps Practices we need Tools  
+
+        -> Why DevOps ?
+
+            -> DevOps unites "Software Development" & "IT Operations" teams 
+                to "Deliver Softwares Faster" & "More Reliable".
+
+        -> Any Application You want to build 
+
+            -> Development Team [ Application is still on Laptop Of Developers, dev, qa servers ]
+
+                -> To Build Applications 
+
+                    -> Softwares Architects 
+                    -> Senior Developer 
+                    -> Junior Developer 
+                    -> Software Testers 
+                    -> etc 
+
+            -> Operations Team
+
+                -> To Deliver/Deploy Applications [ Application is running on Production servers i.e end users ]
+
+                    -> System Admin 
+                    -> Network Admin
+                    -> Cloud Admin 
+                    -> Security Admin 
+                    -> etc 
+            
+            -> Development == Cooking Food 
+
+            -> Operations  == Serving Food 
+
+            -> Cook Food ===> Server Food [ Develop ===> Deploy ]
+
+            -> Before DevOps these teams were working in isolation and if something
+                goes wrong in Delivery / Deployment "BLAME GAME STARTS" 
+
+            -> Eventually Organization is losing 
+
+    -> Who will Implement DevOps ?
+
+        -> DevOps Engineer will implement "DevOps Practices" Using "Tools"
+
+        -> Skill Set Based On Job Role 
+
+            -> Developer: Programming Languages 
+
+            -> System Admin: Server Management(linux admin)
+
+            -> DevOps Engineer: DevOps Practices Using "Tools"
+
+    -> DevOps Engineer
+
+        -> Develop Engineer will implement "DevOps Practices" Using "Tools"
+        so that Organizations can "BUILD" & "DEPLOY" Softwares "FASTER" & "RELIABLE"
+
+
+    -> "DevOps Practices"           ======>         "Tools"              ======>    Use
+
+    -> Version Control System &     ======>         "Git" & "GitHub"     ======>    CODE TRACKING 
+        Source Code Management 
+
+    -> Continuous Integration &     ======>         "Jenkins"            ======>    AUTOMATION
+       Continuous Deployment  
+
+    -> Containerization             ======>         "Docker"             ======>    FASTER 
+
+    -> Orchestration                ======>         "Kubernetes"         ======>    RELIABILITY 
+
+
+    -> DevOps Has Prerequisites 
+
+        -> Server (*) (AWS - AZURE)
+
+        -> Linux (*) (Command Line Interface - CLI)
+
+        -> Software Development Life Cycle (*) (SDLC - Application)
+
+    -> DevOps Practices & Tools 
