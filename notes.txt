@@ -419,6 +419,94 @@
         -> q! - exit without saving i.e discard changes in file  
 
 
+20th Nov 2025
+=============
 
+    -> sudo 
 
+        -> sudo - super user do 
 
+        -> super user means "root" user, who has highest privileges in server 
+
+        -> sudo command (running command as root user i.e no permission issues) 
+
+        -> sudo == Run As Administrator in Win 
+
+        -> whoami 
+
+        -> sudo whoami 
+    
+    -> File Operations
+
+        -> copy files & directories 
+
+            -> file 
+
+                -> cp source_file <destination_directory>
+                -> cp hello.txt aws 
+                -> sudo cp hello.txt /opt 
+
+            -> directories
+
+                -> cp -r source_dir dest_dir 
+                -> sudo cp -r aws /opt
+
+        -> rename files & directories 
+
+            -> mv existing_file_name new_file_name 
+
+            -> mv existing_dir_name new_dir_name 
+
+        -> move file & directories (cut & paste)
+
+            -> mv existing_file_name existing_dir_name
+            -> mv existing_dir_name existing_dir_name
+
+        -> delete files & directories 
+
+            -> This is destructive operation i.e no concept of recycle bin 
+
+            -> rm file_name 
+
+            -> rm -r dir_name 
+
+    
+    -> Installations 
+
+        -> In windows download exe file & install exe (App.exe)
+
+        -> In Ubuntu download deb file & install deb (App.deb)
+
+    -> How To Download ? 
+
+        -> wget http://archive.ubuntu.com/ubuntu/pool/main/z/zip/zip_3.0-12build2_amd64.deb
+
+    -> Install downloaded deb file 
+
+        -> sudo dpkg -i zip_3.0-12build2_amd64.deb
+
+    -> In Ubuntu we have apt package manager (no explicit download needed)
+
+            -> sudo apt install <package> 
+
+            -> sudo apt install unzip
+
+    -> zipping files & folders (Archive)
+
+            -> zip file.zip -r dir1 dir2 file1 file2 etc 
+
+        -> unzip (Extract)
+
+            -> unzip file.zip
+
+        -> There is an inbuilt tool called "tar" which can do Archive & Extract 
+
+            -> Archive 
+
+                -> tar -cf file.tar dir1 dir2 file1 file2 etc 
+
+            -> Extract
+
+                -> tar -xf file.tar
+
+    
