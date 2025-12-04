@@ -915,3 +915,92 @@
         to distribute web content.
 
         -> NOTE: All Servers that host websites must have web server program.
+
+4th Dec 2025
+=============
+
+    -> Below Work Is More Of System Admin Work 
+
+    -> NOTE: Terminate Linux Server, as we no longer need it 
+
+    -> Commands to work with Web Application Deployment 
+
+    -> Web Server runs on port 80 
+
+    -> Commands to check, which port is in use by which service 
+
+        -> sudo ss -ntpl 
+
+    -> Install Web Server i.e Nginx HTTP Server 
+
+        -> sudo apt update -y 
+        -> sudo apt install nginx -y 
+        -> sudo ss -ntpl 
+    
+    -> Test Web Server 
+
+        -> Browse Public IP 
+
+    -> For Web Servers, we have DocumentRoot i.e location 
+        where web pages will be loaded from /var/www/html 
+
+        -> ls /var/www/html 
+
+        -> index page is called Landing Page Of Application
+
+        -> Repo URL - https://github.com/ravi2krishna/login-2516.git
+
+        -> Clone Repo Using CLI 
+
+            -> sudo git clone <url> <destination_directory>
+
+            -> sudo git clone https://github.com/ravi2krishna/login-2516.git /var/www/html 
+
+                -> fatal: destination path '/var/www/html' already exists and is not an empty directory.
+
+            -> Clean Up DocumentRoot
+
+                -> sudo rm /var/www/html/index.nginx-debian.html
+
+                -> ls /var/www/html/
+
+                -> sudo git clone https://github.com/ravi2krishna/login-2516.git /var/www/html 
+
+                -> ls /var/www/html/
+
+                    -> README.md  img_avatar2.png  index.html (Success)
+                
+                -> Browse Public IP 
+
+    
+    -> Task For DevOps Engineer 
+
+        -> DevOps Engineer will focus more on Automation Scripts for efficiency 
+
+        -> Now Host The Application Once again 
+
+        -> Next Host Some Other Application - Repo Link 
+
+        -> NOTE: Above Activities, will be Automated Using Shell Scripts 
+
+        -> How to write code/script and track the script using CLI (Server)
+
+        -> Earlier we demonstrated the same using GUI (VS Code in Laptop)
+
+    -> Shell Scripting 
+
+        -> Shell scripting is a way to "automate tasks on a server" 
+            by writing a series of commands in a file.
+            This file, called a script, is then executed.
+        
+        -> A shell script is a text file containing a sequence of commands 
+            that the shell(bash) can interpret and execute. 
+            These commands can include anything from simple file operations 
+            to complex system administration tasks.
+
+        -> Automating Repetitive Tasks, is the most common use case of Scripting(Shell)
+
+        
+
+
+
