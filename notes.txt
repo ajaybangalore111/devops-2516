@@ -1261,3 +1261,67 @@
         -> sudo cp -r build/* /var/www/html/
 
     -> NOTE: Once Build Lab is done, Delete Build Server 
+
+
+10th Dec 2025
+=============
+
+    -> Build artifacts (Docker Registry)
+
+    -> Artifact Versions 
+
+    -> Nexus 
+
+            -> Sonatype Nexus Repository Manager (Nexus) is a popular software repository manager 
+                used in DevOps to centralize, manage, and distribute "software artifacts"
+                It integrates with CI/CD pipelines.
+            
+            -> Nexus Requires Following Hardware Configuration
+        
+            -> AWS 
+            
+                -> “t2.medium instance” i.e 4 GB RAM - 2 CPU’s on AWS, with 20 GB as Storage.  
+                
+            -> AZURE 
+            
+                -> B2S, i.e 4 GB RAM - 2 CPU’s on AZURE, with 30 GB as Storage
+                
+            -> NOTE: Charges Applicable i.e 4 INR per hour
+
+            -> NOTE: Nexus works on “port 8081”
+
+                -> Make sure to add port 8081 as part of your Security Group or Network Security Group
+
+            -> To Install Nexus Will Rely on Docker Tool (Docker is for Fastness)
+
+                -> Without Docker - https://www.fosstechnix.com/how-to-install-nexus-repository-on-ubuntu/ - 45 mins 
+
+                -> With Docker - 5 mins  
+                
+        -> Install Nexus
+            docker
+            ls
+            wget -O get-docker.sh https://get.docker.com && sh get-docker.sh
+            ls
+            docker 
+            sudo ss -ntpl
+            sudo docker container run -dt --name nexus --restart=always -p 8081:8081 sonatype/nexus3
+            sudo ss -ntpl   
+
+        -> Browse the public-ip:8081
+
+        -> Default username is admin
+
+        -> Default Password can be checked with following command 
+
+            -> sudo docker container exec nexus cat /nexus-data/admin.password
+            
+        -> Uploading Artifact 
+
+            -> curl -v -u username:password --upload-file <file> <nexus-repo-link>
+
+        -> Download Artifact 
+
+            -> curl -u username:password -X GET 'http://3.144.87.187:8081/repository/react-app/react-app-1.1.zip' --output react-app-1.1.zip
+
+        -> NOTE: Terminate All Servers Once Lab is done
