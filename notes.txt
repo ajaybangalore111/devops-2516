@@ -1775,3 +1775,171 @@
             which breaks the principal of Portability
 
 
+17th Dec 2025
+=============
+
+    -> Dockerize / Build Docker Custom Images
+
+        -> docker container run -dt --name w1 -p 8080:80 -v login_vol:/usr/share/nginx/html nginx
+
+        -> This caused dependency 
+
+    -> Alternatively, a simple "Dockerfile" can be used to generate a new image 
+        that includes the necessary content (which is a much cleaner solution than the volume/bind mount above)
+
+    -> Dockerize an application is the process of converting an application to run within a Docker container 
+        without dependency. 
+
+    -> Docker can build images automatically by reading the instructions from a "Dockerfile"
+
+    -> A Dockerfile is a text document that contains all the commands a user could call on the command line 
+        to assemble an image. Dockerfile is source code for Docker Image. 
+    
+    -> Dockerize an application Flow
+
+            -> create a Dockerfile with the required instructions in your project i.e repository
+
+            -> use the "docker build" command to create a Docker image 
+
+            -> Then you can run the container using the image built for confirmation 
+
+    -> Dockerize login application
+
+        -> git clone https://github.com/ravi2krishna/login-2516.git
+        -> cd ~/login-2516
+        -> ls 
+        -> ls Dockerfile 
+        -> docker build -t username_docker_hub/image .
+        -> Create Account On Docker Hub 
+        -> docker build -t ravi2krishna/login-2516 .
+        -> touch Dockerfile
+        -> docker build -t ravi2krishna/login-2516 .
+        -> cat Dockerfile
+            please build login-2516 app
+        -> docker build -t ravi2krishna/login-2516 .
+            unknown instruction: please
+
+    -> Then, how should i instruct docker to build my custom image ?? 
+
+    -> Docker Instructions / Docker Directives 
+
+        FROM — set base image
+        COPY — copy files to image
+        RUN — execute command in container
+        WORKDIR — set working directory
+        VOLUME — create mount-point for a volume
+        CMD — set executable for container
+        EXPOSE — set port number 
+        ENV — set environment variable
+    
+    -> cat Dockerfile
+        
+        # - means comment, ignored by docker
+        # FROM - to set base functionality
+        FROM nginx
+
+        # COPY - to copy data from host to above image
+        COPY . /usr/share/nginx/html
+
+    -> docker build -t ravi2krishna/login-2516 .
+
+    -> docker container run -dt --name login-app -p 80:80 ravi2krishna/login-2516
+    -> docker container ls -a
+    -> docker volume ls
+    -> Test by Browsing ip address of server
+    -> docker login 
+    -> docker push ravi2krishna/login-2516
+
+    -> Create New Server & Setup Docker & Test Login App
+        -> wget -O get-docker.sh https://get.docker.com && sh get-docker.sh
+        -> sudo docker container run -dt --name login-app -p 80:80 ravi2krishna/login-2516
+
+
+    -> Dockerize LMS Application 
+
+        -> cd ~ 
+        -> git clone https://github.com/ravi2krishna/react-app.git 
+        -> cd ~/react-app
+        -> ls 
+        -> ls Dockerfile 
+        -> touch Dockerfile
+
+        -> cat Dockerfile
+
+            # Base Image
+            FROM node:22
+
+        -> docker build -t ravi2krishna/react-app-2516 .
+        -> docker image ls
+        -> docker container run -dt --name t1 ravi2krishna/react-app-2516
+        -> docker container exec t1 node -v
+        -> docker container exec t1 npm -v
+        -> docker container exec t1 pwd
+
+    -> cat Dockerfile
+        # Base Image
+        FROM node:22
+
+        # RUN - to run commands
+        RUN mkdir /react-app
+
+        # WORKDIR - set as working directory
+        WORKDIR /react-app
+
+        # get Code
+        COPY . /react-app
+    
+    -> docker build -t ravi2krishna/react-app-2516 .
+    -> docker container run -dt --name t2 ravi2krishna/react-app-2516
+    -> docker container exec t2 pwd
+    -> docker container exec t2 ls
+    -> docker container exec t2 ls build
+ 
+    -> cat Dockerfile
+
+        # Base Image
+        FROM node:22
+
+        # RUN - to run commands
+        RUN mkdir /react-app
+
+        # WORKDIR - set as working directory
+        WORKDIR /react-app
+
+        # get Code
+        COPY . /react-app
+
+        # Build
+        RUN npm install
+        RUN npm run build
+    
+    -> docker build -t ravi2krishna/react-app-2516 .
+    -> docker container run -dt --name t3 ravi2krishna/react-app-2516
+    -> docker container exec t3 ls build
+
+    -> docker container run -dt --name t4 -p 8080:80 ravi2krishna/react-app-2516
+
+    -> cat Dockerfile
+        # Base Image
+        FROM node:22 AS builder
+
+        # RUN - to run commands
+        RUN mkdir /react-app
+
+        # WORKDIR - set as working directory
+        WORKDIR /react-app
+
+        # get Code
+        COPY . /react-app
+
+        # Build
+        RUN npm install
+        RUN npm run build
+
+        # Deploy On Nginx
+        FROM nginx
+        COPY --from=builder /react-app/build /usr/share/nginx/html
+
+    -> docker build -t ravi2krishna/react-app-2516 .
+    -> docker container run -dt --name react-app -p 8081:80 ravi2krishna/react-app-2516
+    -> docker push ravi2krishna/react-app-2516
