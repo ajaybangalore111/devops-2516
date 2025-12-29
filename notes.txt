@@ -2220,3 +2220,71 @@
 
         -> kubectl get pods 
     
+29th Dec 2025
+=============
+
+    -> NOTE: It is recommended that users create Pods only through a Controller, 
+        and not directly.
+    
+    -> PODS are ephemeral in nature
+
+    -> Pods are not designed to run forever
+
+    -> Pods do not "heal" or repair themselves
+
+    -> Replicaset Object 
+
+        -> Replica Set is often used to guarantee the "availability" of pods 
+
+        -> Replica Set manages pod lifecycle
+
+        -> Replicaset helps you achieve High Availability 
+
+        -> NOTE: In many cases it is recommended to create a Deployment instead of ReplicaSet.
+
+        -> NOTE: ReplicaSets don't allow Updates 
+
+    -> Deployment Object 
+
+        -> A deployment provides "updates" for pods and replicasets.
+
+        -> NOTE: No Warning for Deployment, this is the reason in real world 
+                We never create pods & replicasets directly.
+                We use deployments in real world to manage pods & replicasets.
+
+            -> Deployment -> ReplicaSet -> Pods 
+
+    -> Service Object
+
+        -> A service is an object that acts as an endpoint, which you use to access the pods.
+
+    -> There are different types of kubernetes services present, 
+        to expose an application running on pods
+            -> NodePort         -> access over internet
+            -> Cluster IP       -> access within intranet (private communication)
+            -> LoadBalancer     -> access over internet provided by cloud
+
+    
+    -> NodePort Service
+
+        -> You can contact the NodePort Service, from outside (www) the cluster, 
+            by requesting <NodeIP>:<NodePort>
+
+            -> This is similar to docker using -P (32768 - 61000)
+
+            -> In k8s we use (30000 - 32767)
+    
+    -> Labels & Selectors
+
+        -> Labels: Labels are key/value pairs that are attached to objects.  
+
+        -> Selectors: Using a label selector, we can identify a set of objects.
+
+        -> https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_04_labels.svg
+
+        -> NOTE: Whatever the label we have in the pod definition, 
+                    the same should be in "matchLabels" section
+
+        -> kubectl port-forward --address 0.0.0.0 service/nginx-service 30000:80
+
+        -> kubectl get services 
