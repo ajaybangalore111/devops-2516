@@ -2331,3 +2331,24 @@
         -> https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
 
 
+31st Dec 2025
+=============
+
+    -> HorizontalPodAutoscaler Object 
+
+    -> Enable Metrics Server 
+
+        -> minikube addons enable metrics-server
+
+    -> requests: cpu: 200m
+
+        -> 1000 milli cpu = 1 cpu 
+        -> The container is asking for 200 milli cups to be reserved 
+
+    -> limits: cpu: 500m
+
+        -> The container can use upto 500 milli cups
+
+    -> kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+
+    -> kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
