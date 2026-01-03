@@ -2352,3 +2352,52 @@
     -> kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 
     -> kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+
+2nd Jan 2026
+=============
+
+    -> AWS EKS Production Cluster 
+
+        -> Create Master 
+
+        -> Create Worker Node (Across Multiple Zones)
+
+        -> Create Workstation
+
+    -> Create IAM User: eks 
+
+        -> Using eks user we will setup production cluster 
+
+    -> Workstation Setup 
+
+        -> Setup docker
+
+            wget -O get-docker.sh https://get.docker.com && sh get-docker.sh
+            docker
+            sudo usermod -aG docker ubuntu
+
+        -> Setup Kubectl
+
+            kubectl 
+            curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.23.6/bin/linux/amd64/kubectl
+            chmod +x kubectl
+            sudo mv kubectl /usr/local/bin/kubectl
+            kubectl
+            kubectl get pods
+
+        -> Connect Workstation With Cluster To Deploy Applications On Production Cluster 
+
+            aws 
+            sudo apt -y update && sudo apt -y install awscli
+            aws 
+            aws eks list-clusters
+            aws configure
+            aws eks list-clusters
+            kubectl get services
+            cat /home/ubuntu/.kube/config
+            aws eks update-kubeconfig --name <cluster> --region <region-code>
+            aws eks update-kubeconfig --name prod --region us-east-2
+            cat /home/ubuntu/.kube/config
+            kubectl get services
+            kubectl get pods
+            kubectl get deployments
