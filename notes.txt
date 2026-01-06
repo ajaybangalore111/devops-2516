@@ -2401,3 +2401,87 @@
             kubectl get services
             kubectl get pods
             kubectl get deployments
+
+5th Jan 2026
+=============
+
+    -> Final Project - 4
+
+        -> Project 4 - Implement "AUTOMATION" using "Continuous Integration & Continuous Deployment" - CI / CD
+
+        -> Any Application (v1 -> v2 -> v3 etc ) 
+
+            -> For Every Version 
+
+                -> New Requirement -> New Code -> New Build -> New Test -> New Release -> New Depoly 
+
+        -> CI/CD is a devops practice to frequently deliver apps to customers by 
+            introducing AUTOMATION into the STAGES of app development.
+
+        -> CI/CD bridges the gaps between development and operation activities and teams by 
+            enforcing automation in building, testing and deployment of applications.
+
+    -> Jenkins 
+
+        -> Jenkins is an open source automation server. 
+        It helps automate the parts of software development related to 
+        building, testing, and deploying, facilitating CI-CD.
+
+        -> If your tasks are repeatable i.e "done in the same way over a time period" 
+            then JENKINS can simply automate the repeatable process.
+
+    -> Final Project Goal
+
+        -> Developer Writes & Pushes Code To GitHub 
+
+        -> Code Should be Automatically Fetched From GitHub 
+        
+        -> Code Should be Automatically Analysed Using SonarQube
+
+        -> Code Should be Automatically Built Using npm / docker / etc 
+
+        -> Code Should be Automatically Released Using Nexus 
+
+        -> Code Should be Automatically Deployed Using Virtual Machine / Docker Container / K8s Pods  
+
+    -> Jenkins Setup 
+
+        -> AWS: t2.large (2 CPU - 8 GB RAM) - 20 GB Storage 
+        -> AZURE: D2s_v3 (2 CPU - 8 GB RAM) - 30 GB Storage 
+
+        -> Jenkins runs on port 8080 
+        
+        -> NOTE: Based on tools you are working, updated those tool port numbers 
+
+    -> Jenkins Installation Script 
+
+            sudo ss -ntpl
+            
+            sudo apt update -y
+            sudo apt install openjdk-21* -y
+            sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+            https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+            echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+            https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+            /etc/apt/sources.list.d/jenkins.list > /dev/null
+            sudo apt-get update -y && sudo apt-get install jenkins -y
+
+            sudo ss -ntpl
+
+    -> Browse ip:8080
+
+    -> Jenkins Jobs 
+
+        -> You can think of Jenkins Jobs as a particular "task" or "step" in your project
+
+        -> A Job can be as simple as 
+            
+            -> performing code analysis or
+            
+            -> building your source code or 
+            
+            -> publish an artifact or 
+            
+            -> deploy an application or
+            
+            -> sending an email etc
