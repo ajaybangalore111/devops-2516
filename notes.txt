@@ -2485,3 +2485,65 @@
             -> deploy an application or
             
             -> sending an email etc
+
+7th Jan 2026
+=============
+
+    -> Build Triggers 
+
+        -> Set up automated actions that start your build based on specific events, 
+            like "code changes" or scheduled times.
+
+        -> scheduled times i.e Schedulers (cron jobs)
+
+            -> Schedulers are good for operational actitivies 
+
+        -> Automate Login App Deployment 
+
+            -> Repo: https://github.com/ravi2krishna/login-2516.git
+            
+            -> Remove Sample Files: /var/www/html
+
+            -> Clone App: sudo git clone https://github.com/ravi2krishna/login-2516.git /var/www/html 
+
+    
+    -> Source Code Management
+        
+        -> Connect and manage your code repository to 
+        automatically pull the latest code for your builds.
+
+    -> For Automating Login App Deployment 
+
+        -> Source Code Management: None 
+
+        -> Triggers: No GitHub Option 
+
+        -> Post-build Actions: No Notifications 
+
+    -> Jenkins Plugins 
+
+        -> Plugins are the primary means of enhancing the functionality of Jenkins
+
+        -> Plugins Registry: https://plugins.jenkins.io/
+
+    -> Jenkins Permissions Issues 
+
+        sudo visudo
+        jenkins ALL= NOPASSWD: ALL
+        # opens in nano editor (control+o enter control+x)
+        sudo systemctl restart jenkins
+
+    -> Earlier we had Time Based Job Triggers i.e using a specific time interval 
+        we can execute jobs or manually run jobs, not good for development workflows 
+
+    -> Web Hooks 
+
+        -> Jenkins is an Open-Source Continuous Integration (CI) tool that is extensively 
+        used by developers to automate the testing and deployment of their applications.
+
+        -> A Webhook is a mechanism to automatically trigger the build(jobs)
+            of a Jenkins project in response to a commit pushed to a Git repository.
+
+        -> GitHub To Jenkins 
+
+        -> Jenkins To GitHub
