@@ -2547,3 +2547,14 @@
         -> GitHub To Jenkins 
 
         -> Jenkins To GitHub
+
+9th Jan 2026
+=============
+
+    -> Add Webhook in GitHub Repository
+
+        -> http://3.147.77.183:8080/github-webhook/
+
+    -> Worker Agents 
+
+        -> Install SSH Build Agents Plugin     
