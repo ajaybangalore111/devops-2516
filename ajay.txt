@@ -1,1 +1,2560 @@
-new file created
+12th Nov 2025
+=============
+
+    -> DevOps 
+
+        -> What Is DevOps ?
+
+            -> DevOps is a set of "Practices" & "Tools"
+
+                -> To implement DevOps Practices we need Tools  
+
+        -> Why DevOps ?
+
+            -> DevOps unites "Software Development" & "IT Operations" teams 
+                to "Deliver Softwares Faster" & "More Reliable".
+
+        -> Any Application You want to build 
+
+            -> Development Team [ Application is still on Laptop Of Developers, dev, qa servers ]
+
+                -> To Build Applications 
+
+                    -> Softwares Architects 
+                    -> Senior Developer 
+                    -> Junior Developer 
+                    -> Software Testers 
+                    -> etc 
+
+            -> Operations Team
+
+                -> To Deliver/Deploy Applications [ Application is running on Production servers i.e end users ]
+
+                    -> System Admin 
+                    -> Network Admin
+                    -> Cloud Admin 
+                    -> Security Admin 
+                    -> etc 
+            
+            -> Development == Cooking Food 
+
+            -> Operations  == Serving Food 
+
+            -> Cook Food ===> Server Food [ Develop ===> Deploy ]
+
+            -> Before DevOps these teams were working in isolation and if something
+                goes wrong in Delivery / Deployment "BLAME GAME STARTS" 
+
+            -> Eventually Organization is losing 
+
+    -> Who will Implement DevOps ?
+
+        -> DevOps Engineer will implement "DevOps Practices" Using "Tools"
+
+        -> Skill Set Based On Job Role 
+
+            -> Developer: Programming Languages 
+
+            -> System Admin: Server Management(linux admin)
+
+            -> DevOps Engineer: DevOps Practices Using "Tools"
+
+    -> DevOps Engineer
+
+        -> Develop Engineer will implement "DevOps Practices" Using "Tools"
+        so that Organizations can "BUILD" & "DEPLOY" Softwares "FASTER" & "RELIABLE"
+
+
+    -> "DevOps Practices"           ======>         "Tools"              ======>    Use
+
+    -> Version Control System &     ======>         "Git" & "GitHub"     ======>    CODE TRACKING 
+        Source Code Management 
+
+    -> Continuous Integration &     ======>         "Jenkins"            ======>    AUTOMATION
+       Continuous Deployment  
+
+    -> Containerization             ======>         "Docker"             ======>    FASTER 
+
+    -> Orchestration                ======>         "Kubernetes"         ======>    RELIABILITY 
+
+
+    -> DevOps Has Prerequisites 
+
+        -> Server (*) (AWS - AZURE)
+
+        -> Linux (*) (Command Line Interface - CLI)
+
+        -> Software Development Life Cycle (*) (SDLC - Application)
+
+    -> DevOps Practices & Tools 
+
+
+13th Nov 2025
+=============
+
+    -> Servers 
+
+        -> A Server is a "computer system" that provides data or services 
+            to others computers, known as "clients" over a network.
+
+        -> Laptop can be used by one person at a time 
+        
+        -> Server can be used by multiple persons(clients) at a time 
+
+    -> Physical Server 
+
+        -> Physical Server Consists Of "Hardware" + "Operating System" (Linux OS - Ubuntu)
+
+        -> CPU(Processor) + RAM + HDD + N/W Card
+    
+    -> Server Softwares 
+
+        -> Web Server : Hosts and Serves Web Pages / Web Applications Over Internet 
+
+            -> Examples : Apache Web Server, Nginx Web Server, IIS Server etc 
+
+        -> Database Server : Hosts Application Data & Transactions
+
+            -> Examples : MySQL Server, Postgres Server, MS SQL Server etc 
+
+        -> Email Server : Software that sends, receives, and stores emails.
+
+            -> Examples : Postfix Server, SendMail, Send grid etc 
+
+
+    -> DevOps Context 
+
+        -> DevOps Engineers will deploy and configure Web Servers, Email Server, 
+            Automation Servers etc to ensure High Availability, Performance, Security etc 
+        
+
+    -> Where To get servers from ?
+
+        -> Purchase Server 
+
+            -> Purchasing Servers is QUITE COSTLY and from learning perspective we cannot
+                afford a server 
+
+            -> Rather than Purchasing Server, we want to "RENT SERVERS" 
+
+        -> As per example discussed 
+
+            -> Buying Server == Buying Bike 
+
+            -> Renting Server == Renting Bike 
+
+            -> Renting Bike : Pay for how many kilometers you traveled 
+
+            -> Renting Server : Pay for how much you use i.e "PAY AS YOU GO" price model
+
+                -> 1 Server for 1 hour 
+                -> 1 Server for 5 hour 
+                -> 1 Server for 5 days 
+
+            -> Where can i rent bike ?
+
+                -> Ola, Uber, Rapido etc 
+
+            -> Where can i rent server ?
+
+                -> AWS, AZURE, GCP, OCI etc
+
+    -> Cloud Computing 
+
+        -> Cloud computing is the "on-demand" delivery of "IT resources" 
+            like servers, storage, and software over the "internet" 
+            on a "pay-as-you-go" basis.
+
+    -> In our course will implement servers on both "AWS" & "AZURE"
+
+        -> AWS Cloud - FREE TRAIL
+
+        -> AZURE Cloud - FREE TRAIL
+
+    
+    -> AWS Account Setup - LABS
+        
+        Visit - https://aws.amazon.com/free
+
+    -> AZURE Account Setup - LABS
+        
+        Visit - https://azure.microsoft.com/en-us/free/
+
+    -> Following Details Required - Cloud Setup
+
+        Unique Email ID
+        Unique Mobile Number
+        Unique PAN CARD
+        Unique Debit / Credit Card
+
+
+17th Nov 2025
+=============
+
+    -> AWS Server Setup 
+
+        -> Amazon Elastic Compute Cloud(EC2) is a part of Amazon's cloud-computing platform, 
+        Amazon Web Services, that "allows users to rent virtual computers(servers)" 
+        on which to run their "own computer applications".
+
+        -> Server                   ==> AWS EC2 Instance 
+        -> Server Name              ==> Instance Name 
+        -> Operating System         ==> AMI - Amazon Machine Image ( Linux Ubuntu 22.04)
+        -> CPU + RAM                ==> Instance Types(t2.micro, t2.medium)           
+        -> Login / Authentication   ==> Key Pairs (Public Key & Private Key)
+        -> Network                  ==> VPC(Virtual Private Cloud)
+        -> Firewall                 ==> Security Group (Rules: Protocol, Port, Source)
+        -> Storage (Hard Disk)      ==> EBS Volume (Elastic Block Storage) is 8 GB 
+
+        -> Login To AWS 
+
+            -> https://aws.amazon.com/console/ 
+
+    
+    -> Firewall 
+    
+        -> A firewall is a network security system that monitors and controls 
+            incoming and outgoing network traffic based on predetermined security rules (protocols) 
+
+        -> SSH Protocol (Secure Shell)
+
+            -> Is a network protocol used for secure remote access to 
+                computers over an unsecured network.
+
+            -> SSH allows users to log in, run commands and transfer files securely.
+
+            -> SSH typically runs on TCP port 22
+
+    -> How To Connect With Server ?
+
+        -> SSH Client Softwares 
+
+            -> A software program which uses SSH to connect with remote linux server 
+
+        -> Windows Laptop 
+
+            -> GitBash (recommended) it provides ssh & also git 
+            -> Terminal 
+            -> Putty 
+            -> etc 
+        
+        -> SSH Command 
+
+            -> ssh -i identity_file username@public-ip-address 
+
+            -> ssh -i 2516.pem ubuntu@13.56.155.130 
+        
+        -> MAC Laptop 
+
+            -> Terminal (already installed)
+
+        -> SSH Command 
+
+            -> chmod 400 identity_file 
+
+                -> NOTE: Above command will set file permission to READ ONLY 
+
+            -> chmod 400 2516.pem 
+
+            -> ssh -i 2516.pem ubuntu@13.56.155.130 
+
+18th Nov 2025
+=============
+
+    -> AZURE Server Setup 
+
+        -> Azure Virtual Machines (VM's) is a part of Azure's cloud-computing platform, 
+        Microsoft, that "allows users to rent virtual computers(servers)" 
+        on which to run their "own computer applications".
+
+        -> Server                   ==> Azure Virtual Machine (VM)
+        -> Server Name              ==> VM Name 
+        -> Operating System         ==> Image ( Linux Ubuntu 22.04)
+        -> CPU + RAM                ==> Sizes (b1s, b2s etc)           
+        -> Login / Authentication   ==> Key Pairs (Public Key & Private Key)
+        -> Network                  ==> VNET (Virtual Network)
+        -> Firewall                 ==> Network Security Group (Rules: Protocol, Port, Source)
+        -> Storage (Hard Disk)      ==> Disk is 30 GB 
+
+    -> NOTE : Using AWS or AZURE or any other cloud provider, it doesn't make any difference moving forward 
+
+    -> Using gmail.com on Edge, Chrome, Firefox etc - outcome is same 
+
+    -> We are using Linux Servers, which has only CLI (Command Line Interface)
+
+    -> CLI - Command Line Interface
+
+        -> CLI is a powerful tool for interacting with servers 
+            through "text based commands" 
+
+        -> CLI is very helpful in Automating Repetitive Tasks 
+
+    -> Requirement From Customer 
+
+        -> Create 100 Text files 
+        -> Assume you don't have any CLI knowledge 
+        -> Then we are left with GUI - Graphical User Interface 
+            -> 1 text file creation - 3 seconds 
+            -> 100 text file creation - 300 seconds (5 mins)
+            -> 100000 text file creation - 300000 seconds (5000 mins)   
+
+    -> Resolving Requirement From Customer Using CLI 
+
+        -> touch file-{1..100}.txt
+
+    -> Hardware & System Software(OS) Commands 
+
+        -> CPU / Processor Info 
+
+            -> cat /proc/cpuinfo 
+        
+        -> RAM Info 
+
+            -> free -m 
+
+        -> Disk Info 
+
+            -> df -h 
+
+        -> Network  Info 
+
+            -> ip address 
+
+    -> System Software (OS)
+
+        -> uname 
+        -> cat /etc/os-release 
+
+    -> Check Running Processes 
+
+        -> ps -ef 
+        -> htop (to quit click q on keyboard)
+
+19th Nov 2025
+=============
+
+    -> Linux Architecture 
+
+        -> https://www.tutorialspoint.com/operating_system/images/linux_architecture.jpg
+
+        -> Application(Commands) -> Shell -> Kernel -> Hardware 
+
+        -> Shell : Command Line Interpreter, that translates commands entered 
+            by users and converts them into a Language that Kernel can understand 
+
+            -> BASH - Bourne Again Shell 
+
+                -> ps -ef 
+                -> echo $SHELL 
+
+        -> Kernel : The Linux kernel is the central component of the 
+            Linux operating system. 
+
+                -> uname -r 
+
+
+    -> Linux File System 
+
+        -> A Linux file system is a hierarchical, "tree-like" structure 
+        that organizes data and manages how it is stored on storage devices. 
+        It is unified into a "single" structure, starting from the 
+        root directory (/), which is the top of the hierarchy. 
+
+        -> Key directories include /bin (binaries), /etc (configuration files), 
+        /home (user directories), and /var (variable data like logs). 
+        
+        -> My computer                  -> root directory (/)
+        -> Program Files                -> /bin (binaries)
+        -> C: Users/ravi                -> /home (user directories)
+
+    -> Common directories
+        / (root): The top-level directory of the entire file system.
+        /bin: Contains essential command-line binaries (programs).
+        /boot: Contains files needed for the boot process, such as the kernel and bootloader.
+        /dev: Contains device files that represent hardware devices.
+        /etc: Contains system-wide configuration files.
+        /home: Contains the home directories for regular users.
+        /lib: Holds system libraries needed by binaries in /bin and /sbin.
+        /opt: For optional software packages.
+        /tmp: Temporary files, which are often deleted upon reboot.
+        /usr: Contains most user utilities and applications.
+        /var: Variable data, such as logs and temporary files that are kept between reboots. 
+
+    -> pwd : present working directory
+
+    -> ls : list directory / folder content 
+
+    -> man : manual pages for commands you use (helper utility to know about command)
+
+    -> mkdir : create directory 
+
+    -> touch : create empty file 
+
+    -> cd : change directory 
+
+        -> ~  : home directory
+        -> .. : parent directory
+        -> .  : current directories
+        -> -  : last working directory 
+
+    -> cat : file content viewer (text, pdf, script, sql, conf etc)
+
+    -> vi / vim editor (linux) == Notepad (windows)
+
+    -> vi / vim (visual editor) is a text editor in linux comes pre-installed 
+
+    -> vi modes 
+
+        -> vi existing_file_name 
+
+            -> vi file.txt 
+
+            -> i - insert mode (insert data)
+            -> esc - command mode 
+            -> :w - write data 
+            -> :wq - write data & quit 
+
+        -> vi new_file (create file)
+
+        -> q! - exit without saving i.e discard changes in file  
+
+
+20th Nov 2025
+=============
+
+    -> sudo 
+
+        -> sudo - super user do 
+
+        -> super user means "root" user, who has highest privileges in server 
+
+        -> sudo command (running command as root user i.e no permission issues) 
+
+        -> sudo == Run As Administrator in Win 
+
+        -> whoami 
+
+        -> sudo whoami 
+    
+    -> File Operations
+
+        -> copy files & directories 
+
+            -> file 
+
+                -> cp source_file <destination_directory>
+                -> cp hello.txt aws 
+                -> sudo cp hello.txt /opt 
+
+            -> directories
+
+                -> cp -r source_dir dest_dir 
+                -> sudo cp -r aws /opt
+
+        -> rename files & directories 
+
+            -> mv existing_file_name new_file_name 
+
+            -> mv existing_dir_name new_dir_name 
+
+        -> move file & directories (cut & paste)
+
+            -> mv existing_file_name existing_dir_name
+            -> mv existing_dir_name existing_dir_name
+
+        -> delete files & directories 
+
+            -> This is destructive operation i.e no concept of recycle bin 
+
+            -> rm file_name 
+
+            -> rm -r dir_name 
+
+    
+    -> Installations 
+
+        -> In windows download exe file & install exe (App.exe)
+
+        -> In Ubuntu download deb file & install deb (App.deb)
+
+    -> How To Download ? 
+
+        -> wget http://archive.ubuntu.com/ubuntu/pool/main/z/zip/zip_3.0-12build2_amd64.deb
+
+    -> Install downloaded deb file 
+
+        -> sudo dpkg -i zip_3.0-12build2_amd64.deb
+
+    -> In Ubuntu we have apt package manager (no explicit download needed)
+
+            -> sudo apt install <package> 
+
+            -> sudo apt install unzip
+
+    -> zipping files & folders (Archive)
+
+            -> zip file.zip -r dir1 dir2 file1 file2 etc 
+
+        -> unzip (Extract)
+
+            -> unzip file.zip
+
+        -> There is an inbuilt tool called "tar" which can do Archive & Extract 
+
+            -> Archive 
+
+                -> tar -cf file.tar dir1 dir2 file1 file2 etc 
+
+            -> Extract
+
+                -> tar -xf file.tar
+
+
+25th Nov 2025
+=============
+
+    -> User Management
+
+        -> User 
+
+            -> A user logins to the server and performs some task 
+
+        -> Types Of Users 
+
+            -> root user : root has all elevated privileges(can do anything) in terms of permissions 
+                            no restrictions 
+
+            -> system users : users that are created when we install some softwares or 
+                              users that come with os (id is below 1000)
+
+            -> regular users : created by admins, clouds which are like human entities
+                                admins, developers etc 
+
+        -> How to know, which account you logged in  
+
+            -> whoami 
+        
+        -> Check if users exists in the server 
+
+            -> id username 
+            -> id root
+            -> id ravi
+            -> id john
+        
+        -> Check all users in server
+
+            -> cat /etc/passwd 
+        
+        -> Switch user accounts 
+
+            -> sudo su - username
+            -> sudo su - root 
+            
+            -> sudo su - sys # This account is currently not available.
+            -> sudo su - bin # This account is currently not available.
+
+            -> NOTE: above users sys, bin like system users don't have bash access(so no login)
+
+
+        -> Adding User Accounts
+
+            -> sudo adduser username
+            -> sudo adduser ravi
+            -> id ravi (user id is above 1000)
+            -> grep pattern_to_find filename 
+                -> grep commands helps in filtering 
+            -> grep ravi /etc/passwd
+            -> sudo su - ravi
+        
+
+        -> Grant regular users login access from outside the server 
+
+            -> AWS 
+
+                -> sudo vi /etc/ssh/sshd_config.d/60-cloudimg-settings.conf
+
+                -> Set PasswordAuthentication to yes
+
+                -> Restart ssh service using 
+
+                    -> sudo systemctl restart ssh 
+
+            -> AZURE 
+
+                -> sudo vi /etc/ssh/sshd_config.d/50-cloud-init.conf
+
+                -> Set PasswordAuthentication to yes
+
+                -> Restart ssh service using 
+
+                    -> sudo systemctl restart ssh 
+
+            -> Then Login to servers using below command 
+
+                -> ssh username@ip 
+                -> ssh ravi@ip
+                -> ssh john@ip
+
+            -> Understanding Server Privileges with user accounts 
+
+                -> using ubuntu user
+                    
+                    -> ls /opt
+                    -> touch /opt/ubuntu.txt
+                    -> sudo touch /opt/ubuntu.txt
+                    -> ls /opt
+
+                -> using ravi user
+
+                    -> ls /opt
+                    -> touch /opt/ravi.txt
+                    -> sudo touch /opt/ravi.txt
+                        -> ravi is not in the sudoers file.  This incident will be reported.
+                    -> ls /opt
+
+            -> NOTE: To know sudoers, check with below command 
+
+                -> sudo grep sudo /etc/group 
+            
+            -> NOTE: To add user to sudoers, check with below command 
+
+                -> sudo usermod -aG group username
+                -> sudo usermod -aG sudo ravi
+                -> sudo grep sudo /etc/group
+            
+            -> NOTE: To remove user from sudoers, check with below command 
+
+                -> sudo gpasswd -d username group 
+                -> sudo gpasswd -d ravi sudo 
+
+                -> sudo grep sudo /etc/group
+        
+        -> Deleting User Accounts
+
+            -> Below Command only deletes the user, but all files of user still exists
+
+                -> sudo deluser <username> 
+                -> ls /home
+                -> sudo adduser mike
+                -> ls /home
+                -> sudo deluser mike 
+                -> ls /home
+
+            -> Below Command deletes the user and his data 
+
+                -> sudo deluser  --remove-home <username> 
+                -> ls /home
+                -> sudo adduser snow
+                -> sudo deluser --remove-home snow  
+                -> ls /home
+    
+    -> Group Management 
+
+        -> Group 
+
+            -> A group is a logical collection of users
+
+            -> Groups are for organizing permissions in better way, rather than going 
+                with individual user accounts 
+
+            -> Checking Groups in server
+
+                -> cat /etc/group 
+
+            -> Every user we create has a group with same name as username and it's called primary group 
+
+            -> You can add your own secondary groups, using 
+
+                -> sudo addgroup groupname 
+                -> sudo grep developers /etc/group 
+                -> sudo addgroup developers 
+                -> sudo grep developers /etc/group 
+
+            -> Adding users to group 
+
+                -> sudo usermod -aG group username
+                -> sudo usermod -aG developers ravi
+                -> sudo usermod -aG developers john
+                -> sudo grep developers /etc/group 
+
+            -> Deleting users from group 
+
+                -> sudo gpasswd -d username group 
+
+            -> Delete Groups 
+
+                -> sudo groupdel groupname 
+
+                -> sudo addgroup dummy  
+                -> sudo grep dummy /etc/group 
+                -> sudo groupdel dummy 
+                -> sudo grep dummy /etc/group 
+
+
+28th Nov 2025
+=============
+
+    -> Permissions 
+
+        -> Permissions are grants that we apply to owners(users), groups and others.
+
+        -> Working with permissions, helps you understand, why we are getting 
+            permission denied error
+
+            -> touch /opt/hey.txt
+
+                -> touch: cannot touch '/opt/hey.txt': Permission denied
+
+            -> touch ~/hey.txt 
+
+                -> No permission issues, but why ?? 
+            
+        -> To understand permissions
+
+            -> touch hello.txt 
+            -> ls -l 
+
+                -rw-rw-r-- 1 ubuntu ubuntu 13 Nov 17 04:19 hello.txt
+
+            -> -rw-rw-r-- (indicates permissions)
+            -> ubuntu ubuntu (user group)
+
+            -> -rw-rw-r-- (first - is file)
+            
+            -> rw- rw- r-- (permissions)
+
+                rw- : user / owner 
+                rw- : group 
+                r-- : others 
+
+                r : read ==> w : write ==> x : execute 
+
+            -> rwx rwx rwx (permissions)
+
+    -> Set file to read only permission 
+
+        -> chmod command to set permissions 
+
+        -> Symbolic Mode 
+
+            -> Use symbols for permissions 
+
+            -> rwx - read write execute 
+            -> ugo - user group others 
+            -> +- i,e add(+) and remove(-)
+
+            -> chmod u-w file_name (remove write permission for user)
+            -> chmod ug-w file_name (remove write permission for user & group)
+            -> chmod ugo-wx file_name (remove write permission for user & group)
+
+            -> chmod ugo-r file_name (no read permissions also)
+            -> chmod ugo+r file_name (grant read permissions also)
+
+        -> Absolute Mode 
+
+            -> Use numbers for permissions 
+
+            -> 4 - read
+            -> 2 - write
+            -> 1 - execute
+            -> 0 - no permission 
+            -> https://www.globo.tech/learning-center/wp-content/uploads/2018/01/chmod-Notation-1.png
+            
+            -> rw- rw- r-- [ 664 ] 
+                -> read & write for user & group
+                -> read only for others
+
+            -> Earlier we used chmod 400 key 
+
+        
+        -> Changing Ownership 
+
+            -> chown : change owner 
+
+                -> sudo chown ubuntu /opt/file.txt
+
+            -> chgrp : change group  
+
+                -> sudo chgrp ubuntu /opt/file.txt
+
+            -> Group Level Permissions 
+
+                -> sudo vi /opt/db.properties
+
+                    url=jdbc:mysql://localhost:3306/mydatabase
+                    username=myuser
+                    password=mypassword
+
+                -> sudo chgrp developers /opt/db.properties
+
+                -> sudo chmod 440 /opt/db.properties
+
+                -> sudo grep developers /etc/group 
+
+        -> Use case for execute permission
+
+            -> wget https://s3.us-west-2.amazonaws.com/amazon-eks/1.27.1/2023-04-19/bin/linux/amd64/kubectl
+
+            -> kubectl : command line tool we use to manage resources within Kubernetes cluster
+
+            -> ./kubectl
+                    -bash: ./kubectl: Permission denied
+
+            -> chmod u+x kubectl
+
+            -> ./kubectl
+
+    -> Did we get some control on Linux Server using CLI ?
+
+        -> In Win == We can Do in Linux (CLI)
+
+    -> NOTE: All the activities we performed so far are related to "OPERATIONS" 
+
+        -> As a DevOps Engineer, now you know about Operations     
+
+    -> NOTE: In Parallel we have "DEVELOPMENT" team, who are "DEVELOPING APPLICATIONS" 
+
+        -> By Next Week, As a DevOps Engineer, you will be knowing about Development 
+
+2nd Dec 2025
+=============
+
+    -> "DEVELOPMENT" team
+
+        -> DEVELOPMENT Team mainly builds Applications 
+
+        -> DEVELOPMENT Means Coding 
+
+    -> Version Control Systems (VCS)
+
+        ->  Version control / Revision control / Source control
+            is a process that helps to keep track of changes made to 
+            files (computer programs, web site files, documents etc)
+
+        -> https://www.sirhow.com/uploads/2023/07/check-gpay-transaction-history-step-4.jpg
+
+        -> Advantage Of VCS is Revert Changes To Previous Working Versions, 
+            if there are issues in new version
+
+        -> Git - Client Side Software     - Developer 
+
+            -> Git a tool to implement VCS 
+
+            -> Git helps in tracking code / changes in your code 
+
+            -> Git tracks code in your laptop 
+
+        -> GitHub - Server Side Software  - Organizations
+
+            -> GitHub provides a platform to store code 
+
+            -> GitHub Stores All Versions Of Code in centralized location (github.com)
+
+        -> Repository 
+
+            -> A repository contains all of your project's files and each file's revision history. 
+                Developers can discuss and manage your project's work within the repository.
+
+        -> JIRA 
+
+            -> Jira is a proprietary product developed by Atlassian that allows 
+                bug tracking, issue tracking and agile project management. 
+        
+        -> GitHub Projects & Issues (FREE)
+
+            -> GitHub Projects are a feature within GitHub designed for planning and tracking work
+
+            -> GitHub Issues is a built-in, lightweight issue-tracking system in every repository 
+                used for planning, discussing, and tracking work like 
+                bug reports, new features, and tasks.
+
+            -> NOTE: Within Project we have Issues 
+
+
+        -> Create GitHub Account 
+
+        -> Install Visual Studio Code (VS Code)
+            -> IDE - Integrated Development Environment (Writing Code / Scripts)
+            
+        -> Install Git Bash (win)     
+
+
+3rd Dec 2025
+=============
+
+    -> Setting the git Configuration
+        
+        -> git config --global user.name "ravi2krishna"
+        -> git config --global user.email "ravi2krishna@gmail.com"
+
+    -> Create a branch called dev as a developer
+    -> Clone Remote Github Repository 
+    -> Switch to dev branch and start coding 
+
+    -> Once Application is Developed 
+
+    -> How Customers Will Access Application ?
+
+        -> Customers Will Access Application Via Servers 
+
+    -> To Host / Deploy Applications, Follow Below Approach 
+
+        -> Create Server 
+
+        -> Install Appropriate Softwares On Servers 
+
+        -> Host / Deploy Application On Server 
+
+        NOTE: Above Activities are Operations Oriented 
+
+    -> Web Server 
+
+        -> A web server is computer software [ Nginx HTTP Server ] 
+        and underlying hardware [ AWS Instance / AZURE VM ] 
+        that accepts requests via HTTP (port 80) 
+        to distribute web content.
+
+        -> NOTE: All Servers that host websites must have web server program.
+
+4th Dec 2025
+=============
+
+    -> Below Work Is More Of System Admin Work 
+
+    -> NOTE: Terminate Linux Server, as we no longer need it 
+
+    -> Commands to work with Web Application Deployment 
+
+    -> Web Server runs on port 80 
+
+    -> Commands to check, which port is in use by which service 
+
+        -> sudo ss -ntpl 
+
+    -> Install Web Server i.e Nginx HTTP Server 
+
+        -> sudo apt update -y 
+        -> sudo apt install nginx -y 
+        -> sudo ss -ntpl 
+    
+    -> Test Web Server 
+
+        -> Browse Public IP 
+
+    -> For Web Servers, we have DocumentRoot i.e location 
+        where web pages will be loaded from /var/www/html 
+
+        -> ls /var/www/html 
+
+        -> index page is called Landing Page Of Application
+
+        -> Repo URL - https://github.com/ravi2krishna/login-2516.git
+
+        -> Clone Repo Using CLI 
+
+            -> sudo git clone <url> <destination_directory>
+
+            -> sudo git clone https://github.com/ravi2krishna/login-2516.git /var/www/html 
+
+                -> fatal: destination path '/var/www/html' already exists and is not an empty directory.
+
+            -> Clean Up DocumentRoot
+
+                -> sudo rm /var/www/html/index.nginx-debian.html
+
+                -> ls /var/www/html/
+
+                -> sudo git clone https://github.com/ravi2krishna/login-2516.git /var/www/html 
+
+                -> ls /var/www/html/
+
+                    -> README.md  img_avatar2.png  index.html (Success)
+                
+                -> Browse Public IP 
+
+    
+    -> Task For DevOps Engineer 
+
+        -> DevOps Engineer will focus more on Automation Scripts for efficiency 
+
+        -> Now Host The Application Once again 
+
+        -> Next Host Some Other Application - Repo Link 
+
+        -> NOTE: Above Activities, will be Automated Using Shell Scripts 
+
+        -> How to write code/script and track the script using CLI (Server)
+
+        -> Earlier we demonstrated the same using GUI (VS Code in Laptop)
+
+    -> Shell Scripting 
+
+        -> Shell scripting is a way to "automate tasks on a server" 
+            by writing a series of commands in a file.
+            This file, called a script, is then executed.
+        
+        -> A shell script is a text file containing a sequence of commands 
+            that the shell(bash) can interpret and execute. 
+            These commands can include anything from simple file operations 
+            to complex system administration tasks.
+
+        -> Automating Repetitive Tasks, is the most common use case of Scripting(Shell)
+
+        
+
+5th Dec 2025
+=============
+
+    -> Git CLI Workflow 
+
+        git clone <url>
+        cd repository
+        git status
+        git branch
+        git config --global user.name ravi2krishna                   
+        git config --global user.email ravi2krishna@gmail.com
+        git branch	 scripts
+        git branch
+        git checkout scripts
+        git branch
+        git status
+        vi script.sh   
+            { put some content }               
+        git status
+        git add script.sh   
+            { staged the changes }
+        git commit -m "Create Deployment Script"    
+            { Committed from staging area to local repo}
+        git status
+        git push --all
+
+        -> NOTE: Generate PAT (Personal Access Token) for CLI Push Operations     
+
+        -> NOTE: Terminate Web Server, Once done with work 
+
+
+8th Dec 2025
+=============
+
+    -> Project (Development + Operations)
+
+        -> Development
+
+            -> Application Workflow 
+
+                -> Code -> Static Code Analysis -> Build -> Release -> Deploy (dev, qa & prod )
+
+        -> Operations 
+
+            -> Servers 
+            -> Cloud 
+            -> Docker 
+            -> Kubernetes
+
+    -> Static Code Analysis - SCA
+
+        -> Static code analysis is the "process" of examining source code, bytecode, or binary code 
+        without executing it to find potential bugs, security vulnerabilities, and quality issues. 
+        Automated tools scan the code against predefined rules 
+        to identify problems early in the development cycle, 
+        promoting better coding practices and security. 
+
+        -> Static code analysis is the PROCESS of analyzing source code without actually executing it. 
+
+        -> It involves examining the code for potential issues, 
+            vulnerabilities, and adherence to coding standards and best practices. 
+
+        -> Static code analysis can help identify various types of issues, including:
+
+                Syntax errors and typos
+                Unused variables and methods
+                Code duplication
+                Security vulnerabilities (e.g., SQL injection, cross-site scripting)
+                Memory leaks and resource leaks
+                Performance issues
+                Conformance to coding standards and style guidelines (e.g., indentation, naming conventions)
+
+            -> NOTE: Later on we as DevOps Engineers will write Automated CI-CD Pipelines,
+                    in which SCA is one of the checks / steps 
+            
+            -> To implement SCA we use Tool "SonarQube"
+
+            -> SonarQube 
+
+                -> SonarQube is an open-source platform for continuous code quality and security analysis 
+                    that helps developers identify bugs, security vulnerabilities, and code smells in their code. 
+                    It integrates with CI/CD pipelines.
+            
+            -> SonarQube Requires Following Hardware Configuration
+        
+            -> AWS 
+            
+                -> “t2.medium instance” i.e 4 GB RAM - 2 CPU’s on AWS, with 20 GB as Storage.  
+                
+            -> AZURE 
+            
+                -> B2S, i.e 4 GB RAM - 2 CPU’s on AZURE, with 30 GB as Storage
+                
+            -> NOTE: Charges Applicable i.e 4 INR per hour
+
+            -> NOTE: SonarQube works on “port 9000”
+
+                -> Make sure to add port 9000 as part of your Security Group or Network Security Group
+
+            -> To Install SonarQube Will Rely on Docker Tool (Docker is for Fastness)
+
+                -> Without Docker - https://github.com/ravi2krishna/sonarqube-installation-guide.git - 45 mins 
+
+                -> With Docker - 5 mins   
+            
+        -> Code Analysis With SonarQube
+
+        -> Verify SonarQube Installation
+
+            -> sudo ss -ntpl
+            -> Browse SonarQube, in Browser with port 9000 -> ip_address:9000 
+
+        -> For SonarQube Setup, we need Docker 
+
+            docker
+            ls
+            wget -O get-docker.sh https://get.docker.com && sh get-docker.sh
+            ls
+            docker   
+        
+        -> Install SonarQube
+            sudo ss -ntpl
+            sudo docker container run -dt --name sonarqube --restart=always -p 9000:9000 sonarqube
+            sudo ss -ntpl
+
+        -> Browse SonarQube, in Browser with port 9000 -> ip_address:9000 
+
+        -> Default credentials are 
+            Username is admin 
+            Password is admin
+    
+    -> LMS Project - Code 
+
+        -> https://github.com/ravi2krishna/react-app.git 
+
+    -> Github Fork
+
+        -> Forking a repository means creating a copy of the repo. 
+            When you fork a repo, you create your own copy of the repo on your GitHub account.
+
+        -> NOTE: Fork Above Project to your Github Accounts
+
+    -> Performing Code Analysis With SonarQube 
+
+        ls
+        git clone -b dev https://github.com/RohithAyyalasomayajula/react-app.git
+        ls
+        cd ~/react-app
+        ls
+        sudo docker run  --rm -e SONAR_HOST_URL="http://3.148.185.213:9000" -v ".:/usr/src" sonarsource/sonar-scanner-cli -Dsonar.token=sqp_f44d94d5bc655186268a040e51049289c808f0ae -Dsonar.projectKey=lms
+
+    -> NOTE: Once Sonar Analysis Lab is done, Delete SonarQube Server 
+
+
+9th Dec 2025
+=============
+
+    -> Build Management 
+
+        -> The term "build" may refer to the "process" by which 
+            "source code" is converted into "binary code" (software artifact)
+
+        -> In DevOps, the software build process is a foundational component of the 
+            Continuous Integration and Continuous Delivery (CI/CD) pipeline, 
+            serving as a critical automated step that transforms 
+            source code into a deployable product.
+
+            -> Artifact is Useable Software after build is done 
+
+
+        -> Source Code - https://github.com/notepad-plus-plus/notepad-plus-plus/tags
+
+                -> After Building, Artifact is Useable Software which is below 
+
+        -> Binary Code - https://notepad-plus-plus.org/downloads/
+
+    -> Any Build implementation consists of following steps 
+
+        -> Source Code Files 
+
+            -> Source code is the list of human-readable instructions that a programmer writes
+
+            -> Handled by Developer
+
+        -> Metadata File 
+
+            -> File that contains information about the project and 
+                configuration details used to build the project. 
+
+            -> Handled by Developer
+
+        -> LMS Project - Code 
+
+            -> https://github.com/ravi2krishna/react-app.git 
+
+        -> Binary Code (After Build is done)
+
+            -> Build artifacts are files produced by a build
+
+            -> Handled by Developer in his Laptop
+            
+            -> Handled by DevOps Engineer on Server for future Automation in CI-CD
+        
+    -> NOTE: Below Link Help's you understand, how developers initially learn how to perform builds 
+
+        -> https://radixweb.com/blog/steps-to-build-react-project-with-create-react-app
+
+    -> Setup Environment 
+
+        # Download and install nvm:
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+        # in lieu of restarting the shell
+        \. "$HOME/.nvm/nvm.sh"
+
+        # Download and install Node.js:
+        nvm install 22
+
+        # Verify the Node.js version:
+        node -v # Should print "v22.21.1".
+
+        # Verify npm version:
+        npm -v # Should print "10.9.4"
+
+    -> Build Process 
+
+        -> git clone https://github.com/ravi2krishna/react-app.git 
+
+        -> cd react-app
+
+        -> ls build 
+
+        -> npm install 
+
+        -> npm run build  
+
+        -> ls build 
+
+        -> sudo rm -r /var/www/html/*
+
+        -> ls /var/www/html/
+
+        -> sudo cp -r build/* /var/www/html/
+
+    -> NOTE: When Code is changed, we need to Re Build & Re Deploy 
+
+        -> As discussed earlier, applications always change over time 
+
+        -> git pull 
+
+        -> npm install 
+
+        -> npm run build  
+
+        -> sudo rm -r /var/www/html/*
+
+        -> sudo cp -r build/* /var/www/html/
+
+    -> NOTE: Once Build Lab is done, Delete Build Server 
+
+
+10th Dec 2025
+=============
+
+    -> Build artifacts (Docker Registry)
+
+    -> Artifact Versions 
+
+    -> Nexus 
+
+            -> Sonatype Nexus Repository Manager (Nexus) is a popular software repository manager 
+                used in DevOps to centralize, manage, and distribute "software artifacts"
+                It integrates with CI/CD pipelines.
+            
+            -> Nexus Requires Following Hardware Configuration
+        
+            -> AWS 
+            
+                -> “t2.medium instance” i.e 4 GB RAM - 2 CPU’s on AWS, with 20 GB as Storage.  
+                
+            -> AZURE 
+            
+                -> B2S, i.e 4 GB RAM - 2 CPU’s on AZURE, with 30 GB as Storage
+                
+            -> NOTE: Charges Applicable i.e 4 INR per hour
+
+            -> NOTE: Nexus works on “port 8081”
+
+                -> Make sure to add port 8081 as part of your Security Group or Network Security Group
+
+            -> To Install Nexus Will Rely on Docker Tool (Docker is for Fastness)
+
+                -> Without Docker - https://www.fosstechnix.com/how-to-install-nexus-repository-on-ubuntu/ - 45 mins 
+
+                -> With Docker - 5 mins  
+                
+        -> Install Nexus
+            docker
+            ls
+            wget -O get-docker.sh https://get.docker.com && sh get-docker.sh
+            ls
+            docker 
+            sudo ss -ntpl
+            sudo docker container run -dt --name nexus --restart=always -p 8081:8081 sonatype/nexus3
+            sudo ss -ntpl   
+
+        -> Browse the public-ip:8081
+
+        -> Default username is admin
+
+        -> Default Password can be checked with following command 
+
+            -> sudo docker container exec nexus cat /nexus-data/admin.password
+            
+        -> Uploading Artifact 
+
+            -> curl -v -u username:password --upload-file <file> <nexus-repo-link>
+
+        -> Download Artifact 
+
+            -> curl -u username:password -X GET 'http://3.144.87.187:8081/repository/react-app/react-app-1.1.zip' --output react-app-1.1.zip
+
+        -> NOTE: Terminate All Servers Once Lab is done
+
+
+11th Dec 2025
+=============
+
+    -> Project 1 
+
+        -> Code -> Test -> Build -> Release -> Deploy 
+
+            -> Git & GitHub -> SonarQube -> NPM -> Nexus -> Nginx Web Server 
+
+    -> DevOps is a set of PRACTICES that works towards the 
+        "AUTOMATION" and "INTEGRATION" of the processes between 
+        Software Development (Dev) and IT (Ops) teams, 
+        so that organizations can "BUILD" and "DEPLOY" softwares/applications 
+        "FASTER" and more "RELIABLE"
+
+    -> Whole Application Process (Dev & Ops) Took 2-3 Hours (2-3 Sessions)
+
+        -> Organizations are looking for Acceleration i.e "FASTER"
+
+        -> For our earlier experience, using SonarQube(45 Mins) & Nexus(45 Mins), traditionally 
+
+            -> When we used Docker hardly SonarQube(5 Mins) & Nexus(5 Mins)
+
+            -> Why shouldn't you Apply Docker on Whole Application Process ??? 
+
+                -> Whole Application Process (Dev & Ops) -> Traditionally Took 2-3 Hours
+
+                -> Whole Application Process (Dev & Ops) -> Docker Took 5-10 mins 
+    
+    -> NOTE: To Accelerate Development & Deployment process, we can use "Containerization"
+
+    
+    -> Project 2 - Implement Acceleration i.e FASTNESS using "Containerization"
+
+    -> Containerization
+
+        -> Containerization is one of the practices in devops, which provides 
+
+            -> "Lightweight" and "Efficient" way of running applications 
+            
+            -> Promotes "Faster Deployments" and "Portability" for applications
+
+        -> Containerization is implemented by software/tool "DOCKER" 
+
+    -> Container 
+
+        -> An object for holding or transporting something 
+
+            -> https://upload.wikimedia.org/wikipedia/commons/d/df/Container_01_KMJ.jpg
+
+        -> In terms of software development, a container is an object 
+            for holding or transporting/shipping applications.
+
+    
+    -> Monolithic Architecture
+
+        -> Monolithic architecture is a software design pattern where the entire application 
+            is built as a "single, indivisible unit".
+
+    -> Micro Services Architecture
+
+        -> Microservices Architecture is a software development approach that involves 
+            building small, independent services that work together to create a larger application.
+
+    -> NOTE: As DevOps Engineer, Deploying Micro Sized Applications(Micro Services) on Container is our work
+
+    -> Docker Architecture
+
+        -> Docker Client (CLI)  
+
+        -> Docker Server (Daemon)
+
+        -> Docker Registry (https://hub.docker.com)
+
+        -> Docker Images
+
+        -> Docker Containers 
+
+    -> Be it a framework (nodejs), Be it a tool (sonarqube), Be it an Operating System (ubuntu) 
+
+        -> All above are considered as Docker Images 
+
+        -> These Docker Images are stored in Docker Registry (https://hub.docker.com) [ Like Play store ]
+
+        -> Docker Containers are Runtime of images 
+
+            -> Images are like Templates / Blueprints
+
+            -> Containers are Real Entities We run
+
+            -> NOTE: To create a container, image is mandatory 
+
+        -> A container is an object for holding or transporting/shipping applications.
+
+            -> To Create Container, we use Docker Client (CLI) and make a request 
+
+            -> DevOps Engineer -> Makes Request For Creating Container Using Docker Client (CLI)
+
+                -> Docker Client (CLI) -> Sends Request To Docker Server (Daemon) -> Connect To Docker Registry
+
+                    -> Fetch Docker Images to Server(compute) -> Using Image Runs/Creates Containers
+
+        -> The Daemon/Service is responsible for managing Docker objects 
+            such as images, containers, and networks. All the heavy lifting is done by daemon.
+        
+        -> The client sends commands to the daemon and receives output. 
+        
+        -> The registry stores Docker images and allows them to be shared among users and systems.
+
+        -> A Docker image is a lightweight, standalone, and executable package 
+            that includes everything needed to run the desired software application.
+
+        -> A container in Docker allows you to run an application with all the dependencies it needs. 
+            To create a container we need Docker Image.
+
+        -> NOTE: Know Docker -> Know Kubernetes 
+
+        
+12th Dec 2025
+=============
+
+    -> Docker Setup 
+
+        -> AWS 
+            
+            -> “t2.medium instance” i.e 4 GB RAM - 2 CPU’s on AWS, with 20 GB as Storage.  
+                
+        -> AZURE 
+            
+            -> B2S, i.e 4 GB RAM - 2 CPU’s on AZURE, with 30 GB as Storage   
+
+        -> Add Following Rules in Security Groups / Network Security Groups
+            -> 22, 80, 32768-61000, 8080-9090
+
+                -> 32768-61000 - Docker Pre defined port range(*)   
+                -> 8080-9090 - User defined port range
+
+        -> Setup Docker 
+
+            -> docker 
+            -> wget -O get-docker.sh https://get.docker.com && sh get-docker.sh
+            -> docker
+
+        -> docker image ls
+            
+            -> permission denied
+
+        -> To Overcome Permissions issues, add ubuntu user to docker group 
+            
+            -> sudo usermod -aG docker ubuntu
+                
+                -> logout & login back
+
+            -> docker image ls
+            
+        -> Creating Container 
+
+            -> docker container ls -a 
+
+            -> docker container run image 
+
+            -> docker container run hello-world
+
+            -> docker image ls
+
+            -> docker container ls -a 
+
+    -> To run containers we have modes 
+
+        -> No Mode 
+
+            -> docker container run --name c1 ubuntu:22.04
+
+            -> docker container ls -a
+
+            -> NOTE: Containers are in exit state i.e stopped 
+
+        -> Interactive / Foreground Mode (development / troubleshoot)
+
+            -> docker container run -it --name c2 ubuntu:22.04
+
+            -> NOTE: In Interactive Mode Containers will stop once we come out of the container
+
+        -> Detached / Background Mode (production)
+
+            -> docker container run -dt --name c3 ubuntu:22.04
+
+        -> Use below command to execute commands in container 
+
+            -> docker container exec name_of_container <command>
+
+            -> docker container exec c3 ps -ef
+
+            -> docker container exec -it c3 bash (connect to container running in Background)
+
+    -> Container Management Commands 
+
+        -> docker container run (creating)
+
+        -> docker container stop c3 (stopping)
+
+        -> docker container start c3 (starting)
+
+        -> docker container rm c3 (removing)
+
+        -> docker container rm -f c3 (removing)
+
+    -> Goal is Run Web Application In Container i.e Just like How we did in VM 
+
+        -> docker container run -dt --name web-1 ubuntu:22.04
+
+        -> docker container exec -it web-1 bash
+
+        -> ss -ntpl
+            bash: ss: command not found
+        
+        -> apt update -y && apt install iproute2 -y 
+
+        -> ss -ntpl
+
+        -> apt update -y && apt install nginx -y
+        
+        -> ss -ntpl
+
+        -> service nginx start
+
+        -> ss -ntpl
+
+        -> docker container inspect web-1
+
+        -> curl container-ip-address 
+
+    -> NOTE: Above approach is not a recommended way, but it connects how we shifted from VM to Container 
+
+
+15th Dec 2025
+=============
+
+    -> docker container rm -f web-1 (removing)
+    -> docker container run -dt --name web-1 ubuntu:22.04
+    -> docker container inspect web-1
+    -> curl container-ip-address 
+
+    -> NOTE: Above approach is not a recommended way, as we need to setup nginx from scratch again 
+
+    -> NOTE: Below approach is a recommended way
+
+    -> docker container run -dt --name web-2 nginx 
+    -> docker container inspect web-2
+    -> curl container-ip-address
+
+    -> Browse Public-IP (No access to Nginx Page)
+
+        -> As nginx is running on the container, not on the host 
+
+        -> Now how can we make customers access web applications from internet ??
+
+    -> To Access Containers Outside i.e internet we need to understand docker networking  
+
+    -> Docker supports following network drivers, each designed for specific use case
+        
+        -> Host
+        -> None
+        -> Bridge
+
+    -> docker network ls 
+
+    -> docker container ls -a
+
+    -> docker container inspect web-1
+    -> docker container inspect web-2
+    -> docker network inspect bridge
+
+    -> By Default, Containers will run on "bridge" network 
+
+    -> Host Network Driver
+
+        -> This driver removes network isolation between the container and the Docker host, 
+        allowing them to share the host’s networking namespace
+
+        -> docker network ls 
+        -> docker network inspect host 
+        -> docker container run -dt --name web-3 --network=host nginx 
+        -> docker network inspect host 
+        -> docker container inspect web-3
+        -> docker container ls -a
+
+        -> NOTE: Check below command 
+            
+            -> docker container run -dt --name web-4 --network=host nginx 
+            -> docker network inspect host 
+            -> docker container ls -a
+            -> docker container logs web-4
+                -> 80 failed (98: Address already in use) 
+                -> NOTE: Fix is upcoming bridge network 
+
+    
+    -> None Network Driver
+
+        -> This driver removes network access to containers i.e no network (no www)
+
+        -> docker container exec web-3 apt update -y 
+
+            -> This confirms we have network access in host network
+
+        -> docker container run -dt --name web-5 --network=none nginx 
+        -> docker network inspect none 
+        -> docker container ls -a
+        -> docker container exec web-5 apt update -y 
+
+    
+    -> Bridge Network Driver
+
+        -> The default network driver for containers. 
+        When a new container is run, it can be attached to this Bridge network.
+
+        -> Using bridge network we can run multiple containers at same time, 
+            but cannot be accessed outside via internet. 
+
+        -> To Allow External Access To Containers using bridge, we can use Port Forwarding (-p)
+
+        -> This is the activity that makes a port inside a container 
+            accessible to ports on the Docker host for external access.
+
+            -> -p - docker user defined ports ( custom range 8080 to 9090 )
+
+        -> docker container run -dt --name web-6 -p 8080:80 nginx 
+        -> docker container ls -a
+        -> docker container run -dt --name web-7 -p 8081:80 nginx 
+        -> docker container run -dt --name web-8 -p 8082:80 nginx 
+        -> docker container ls -a
+
+            -> -P - docker ephemeral ports ( predefined range 32768 to 61000 )
+
+        -> docker container run -dt --name web-9 -P nginx 
+        -> docker container ls -a
+        -> docker container run -dt --name web-10 -P nginx 
+        -> docker container ls -a
+    
+            -> docker container run -dt --name sonarqube --restart=always -p 9000:9000 sonarqube (don't run)
+            -> docker container run -dt --name nexus --restart=always -p 8081:8081 sonatype/nexus3 (don't run)
+
+        -> docker container run -dt --name web-11 --restart=always -p 8083:80 nginx 
+        -> docker container ls -a
+
+
+16th Dec 2025
+=============
+
+    -> Data Persistency 
+
+        -> Persistent Means Permanent Storage
+
+        -> Non-Persistent Means Temporary Storage
+
+    -> By default containers are "non-persistent" (ephemeral) in nature
+    This design makes containers lightweight, portable, and 
+    easy to scale or replace, which is ideal for stateless applications. 
+
+    -> Docker volumes is a mechanism for "persisting data" generated by Docker containers.  
+
+    -> Docker volumes allow data to persist even when containers are deleted. 
+
+    -> Goal Is Deploy Login Application
+
+        -> sudo git clone https://github.com/ravi2krishna/login-2516.git /var/www/html 
+
+        -> docker container run -dt --name w1 -p 8080:80 nginx
+        -> docker container exec -it w1 bash
+        -> apt update -y && apt install git -y
+        -> ls /var/www/html
+            ls: cannot access '/var/www/html': No such file or directory
+        
+        -> NOTE: Inside docker containers the DocumentRoot is /usr/share/nginx/html
+
+        -> ls /usr/share/nginx/html
+        -> rm -r /usr/share/nginx/html/*
+        -> git clone https://github.com/ravi2krishna/login-2516.git /usr/share/nginx/html
+        
+        -> Test by Browsing ip address of server
+        -> exit 
+
+    -> Let's remove the container and check back again for data 
+
+        -> docker container rm -f w1
+        -> docker container ls -a
+        -> Test by Browsing ip address of server
+
+        -> docker container run -dt --name w1 -p 8080:80 nginx
+        -> docker container ls -a
+        -> Test by Browsing ip address of server
+        -> docker container rm -f w1
+
+    -> NOTE: With above observation, we can say, when we remove container 
+                all data associated with container is lost 
+
+    -> To achieve Persistency with data use "Volumes"
+
+        -> docker volume ls 
+    
+    -> Creating Volume for containers 
+
+        -> docker container run -dt --name w1 -p 8080:80 -v name_vol:/path_to_persist_in_container image
+
+        -> docker container run -dt --name w1 -p 8080:80 -v login_vol:/usr/share/nginx/html nginx
+        -> docker volume ls
+        -> docker volume inspect login_vol
+        -> sudo ls /var/lib/docker/volumes/login_vol/_data
+        -> docker container exec -it w1 bash
+        -> apt update -y && apt install git -y
+        -> ls /usr/share/nginx/html
+        -> rm -r /usr/share/nginx/html/*
+        -> git clone https://github.com/ravi2krishna/login-2516.git /usr/share/nginx/html
+        -> exit 
+        -> sudo ls /var/lib/docker/volumes/login_vol/_data
+
+    -> Let's confirm volume helped us persist data ?
+        
+        -> docker container rm -f w1
+        -> docker container ls -a
+        -> Test by Browsing ip address of server
+
+        -> docker volume ls
+        -> sudo ls /var/lib/docker/volumes/login_vol/_data
+
+        -> docker container run -dt --name w1 -p 8080:80 -v login_vol:/usr/share/nginx/html nginx
+
+        -> docker container rm -f w1
+        -> docker container ls -a
+        -> Test by Browsing ip address of server
+
+        -> docker container run -dt --name w1 -p 8080:80 -v login_vol:/usr/share/nginx/html nginx
+
+    -> Now say our system encountered downtime (because of hardware failure)
+
+        -> Next step is create a new server in a different data center and host application
+
+        -> install docker 
+
+        -> docker container run -dt --name w1 -p 8080:80 -v login_vol:/usr/share/nginx/html nginx
+        -> docker container ls -a
+        -> Test by Browsing ip address of server
+            -> Why am i not getting login application ?
+
+    -> NOTE: With above observation, we can say, volumes creates dependencies
+            which breaks the principal of Portability
+
+
+17th Dec 2025
+=============
+
+    -> Dockerize / Build Docker Custom Images
+
+        -> docker container run -dt --name w1 -p 8080:80 -v login_vol:/usr/share/nginx/html nginx
+
+        -> This caused dependency 
+
+    -> Alternatively, a simple "Dockerfile" can be used to generate a new image 
+        that includes the necessary content (which is a much cleaner solution than the volume/bind mount above)
+
+    -> Dockerize an application is the process of converting an application to run within a Docker container 
+        without dependency. 
+
+    -> Docker can build images automatically by reading the instructions from a "Dockerfile"
+
+    -> A Dockerfile is a text document that contains all the commands a user could call on the command line 
+        to assemble an image. Dockerfile is source code for Docker Image. 
+    
+    -> Dockerize an application Flow
+
+            -> create a Dockerfile with the required instructions in your project i.e repository
+
+            -> use the "docker build" command to create a Docker image 
+
+            -> Then you can run the container using the image built for confirmation 
+
+    -> Dockerize login application
+
+        -> git clone https://github.com/ravi2krishna/login-2516.git
+        -> cd ~/login-2516
+        -> ls 
+        -> ls Dockerfile 
+        -> docker build -t username_docker_hub/image .
+        -> Create Account On Docker Hub 
+        -> docker build -t ravi2krishna/login-2516 .
+        -> touch Dockerfile
+        -> docker build -t ravi2krishna/login-2516 .
+        -> cat Dockerfile
+            please build login-2516 app
+        -> docker build -t ravi2krishna/login-2516 .
+            unknown instruction: please
+
+    -> Then, how should i instruct docker to build my custom image ?? 
+
+    -> Docker Instructions / Docker Directives 
+
+        FROM — set base image
+        COPY — copy files to image
+        RUN — execute command in container
+        WORKDIR — set working directory
+        VOLUME — create mount-point for a volume
+        CMD — set executable for container
+        EXPOSE — set port number 
+        ENV — set environment variable
+    
+    -> cat Dockerfile
+        
+        # - means comment, ignored by docker
+        # FROM - to set base functionality
+        FROM nginx
+
+        # COPY - to copy data from host to above image
+        COPY . /usr/share/nginx/html
+
+    -> docker build -t ravi2krishna/login-2516 .
+
+    -> docker container run -dt --name login-app -p 80:80 ravi2krishna/login-2516
+    -> docker container ls -a
+    -> docker volume ls
+    -> Test by Browsing ip address of server
+    -> docker login 
+    -> docker push ravi2krishna/login-2516
+
+    -> Create New Server & Setup Docker & Test Login App
+        -> wget -O get-docker.sh https://get.docker.com && sh get-docker.sh
+        -> sudo docker container run -dt --name login-app -p 80:80 ravi2krishna/login-2516
+
+
+    -> Dockerize LMS Application 
+
+        -> cd ~ 
+        -> git clone https://github.com/ravi2krishna/react-app.git 
+        -> cd ~/react-app
+        -> ls 
+        -> ls Dockerfile 
+        -> touch Dockerfile
+
+        -> cat Dockerfile
+
+            # Base Image
+            FROM node:22
+
+        -> docker build -t ravi2krishna/react-app-2516 .
+        -> docker image ls
+        -> docker container run -dt --name t1 ravi2krishna/react-app-2516
+        -> docker container exec t1 node -v
+        -> docker container exec t1 npm -v
+        -> docker container exec t1 pwd
+
+    -> cat Dockerfile
+        # Base Image
+        FROM node:22
+
+        # RUN - to run commands
+        RUN mkdir /react-app
+
+        # WORKDIR - set as working directory
+        WORKDIR /react-app
+
+        # get Code
+        COPY . /react-app
+    
+    -> docker build -t ravi2krishna/react-app-2516 .
+    -> docker container run -dt --name t2 ravi2krishna/react-app-2516
+    -> docker container exec t2 pwd
+    -> docker container exec t2 ls
+    -> docker container exec t2 ls build
+ 
+    -> cat Dockerfile
+
+        # Base Image
+        FROM node:22
+
+        # RUN - to run commands
+        RUN mkdir /react-app
+
+        # WORKDIR - set as working directory
+        WORKDIR /react-app
+
+        # get Code
+        COPY . /react-app
+
+        # Build
+        RUN npm install
+        RUN npm run build
+    
+    -> docker build -t ravi2krishna/react-app-2516 .
+    -> docker container run -dt --name t3 ravi2krishna/react-app-2516
+    -> docker container exec t3 ls build
+
+    -> docker container run -dt --name t4 -p 8080:80 ravi2krishna/react-app-2516
+
+    -> cat Dockerfile
+        # Base Image
+        FROM node:22 AS builder
+
+        # RUN - to run commands
+        RUN mkdir /react-app
+
+        # WORKDIR - set as working directory
+        WORKDIR /react-app
+
+        # get Code
+        COPY . /react-app
+
+        # Build
+        RUN npm install
+        RUN npm run build
+
+        # Deploy On Nginx
+        FROM nginx
+        COPY --from=builder /react-app/build /usr/share/nginx/html
+
+    -> docker build -t ravi2krishna/react-app-2516 .
+    -> docker container run -dt --name react-app -p 8081:80 ravi2krishna/react-app-2516
+    -> docker push ravi2krishna/react-app-2516
+
+
+19th Dec 2025
+=============
+
+    -> DevOps is a set of PRACTICES that works towards the 
+        "AUTOMATION" and "INTEGRATION" of the processes between 
+        Software Development (Dev) and IT (Ops) teams, 
+        so that organizations can "BUILD" and "DEPLOY" softwares/applications 
+        "FASTER" and more "RELIABLE"
+
+    -> Project 3 
+
+        -> Project 3 - Implement "RELIABILITY" using "Orchestration"
+
+        -> Once we Terminated Docker Server, we need to setup Environment from scratch again (Single Point Of Failure)
+
+        -> High Availability (HA)
+
+            -> HA means designing IT systems to operate continuously with minimal or zero downtime.
+
+            -> To achieve HA we eliminate Single Point Of Failure
+
+        -> High availability in AWS/AZURE ensures that applications and services are 
+            continuously accessible and operational, even in the event of component failures or disruptions. 
+
+        -> HA is achieved by deploying resources across multiple availability zones (AZs)
+
+        -> To Achieve High Availability / Reliability we need process called "Orchestration"
+
+        -> To implement Orchestration, we use "Kubernetes" 
+
+    -> Production-Grade Container Orchestration
+
+        -> Production-grade container orchestration refers to the capability of 
+                "running containerized applications in a production environment" effectively and reliably.
+    
+    -> Kubernetes
+
+        -> Kubernetes is a Production-Grade Container Orchestration, which builds up on 
+            "15 years of experience of running production workloads at Google"
+
+        -> It was originally designed by Google, and is now maintained by the 
+            Cloud Native Computing Foundation (CNCF) 
+
+
+22nd Dec 2025
+=============
+
+    -> Kubernetes Architecture / Components
+
+    -> Master Components
+
+        -> API Server: 
+            
+            -> The API server acts as the brain of the Kubernetes cluster. 
+            It provides a central point of communication for all the other components. 
+            When you want to create, update, or delete something in the cluster, 
+            you communicate with the API server.
+
+        -> etcd: 
+            
+            -> Think of etcd as the memory of the Kubernetes cluster. 
+            It stores the configuration data and the state of the entire cluster. 
+            When any component wants to know the current state of the cluster, it asks etcd.
+
+        -> Scheduler: 
+            
+            -> The Scheduler is like a matchmaker. 
+            Its job is to decide which worker node should run each new app container/pod. 
+            It considers factors like available resources, to make sure app containers/pods 
+            are placed on suitable worker nodes.
+
+        -> Controller: 
+
+            -> The Controller Manager is like the supervisor of the cluster. 
+            It continuously observes the state of the cluster through the API server. 
+            If it detects that the actual state of the cluster doesn't match the desired state 
+            (for example, if an app container/pod goes down), 
+            it takes action to make the cluster converge to the desired state.
+    
+    -> Worker Components
+
+        -> Kubelet: 
+
+            -> The Kubelet is like the worker's Agent Software.  
+            It runs on every worker node and is responsible for making sure 
+            that the containers/pods assigned to its node are running and healthy. 
+            It takes care of starting, stopping, and monitoring containers within the pods. 
+            It updates the status back to Master.
+
+        -> Docker: 
+
+            -> The container runtime is the software that runs and manages containers.  
+            The container runtime is responsible for pulling container images from a registry, 
+            creating containers, and managing their life cycles.
+
+        -> Kube Proxy: 
+
+            -> The Kube Proxy is like the traffic cop of the worker nodes. 
+            It manages the network connections and routing between the containers/pods and services 
+            within the cluster. It ensures that network traffic is correctly directed to the right destination.
+    
+    -> Workstation Component
+
+        -> Kubectl: 
+
+            -> API server is the main entrypoint to the k8s cluster, 
+            so if you want to do anything in Kubernetes(k8s) cluster, 
+            you first have to talk to the API server and the way to talk is through 
+            a client software called KUBECTL, a CLI tool.    
+    
+    -> Setup Kubernetes
+
+        -> Minikube - Mini Kubernetes (Free & Minimal Cost)
+
+        -> Minikube is a single node cluster, where the master processes and worker processes and 
+                workstation all run on one node (one server).
+
+        -> Minikube is primarily used for local development and "learning purposes". 
+
+        -> Minikube is great for learning, but it is not designed for running production workloads.
+
+        -> For production environments, you would typically use "managed Kubernetes services" provided by 
+                "cloud providers" i.e AWS EKS or AZURE AKS or GOOGLE GKE etc
+
+    -> NOTE: Minikube Requires, below hardware configuration
+
+        -> AWS 
+            
+            -> “t2.medium instance” i.e 4 GB RAM - 2 CPU’s on AWS, with 20 GB as Storage.  
+                
+        -> AZURE 
+            
+            -> B2S, i.e 4 GB RAM - 2 CPU’s on AZURE, with 30 GB as Storage   
+
+        -> Add Following Rules in Security Groups / Network Security Groups
+            -> 22, 80, 31000-32767
+
+    -> In Minikube We need to do setup Manually, but in Production vendors provide the Setup 
+
+
+23rd Dec 2025
+=============
+
+    -> Setup Minikube 
+
+    -> Setup Docker 
+
+            -> docker 
+            -> wget -O get-docker.sh https://get.docker.com && sh get-docker.sh
+            -> docker
+            -> sudo usermod -aG docker ubuntu
+
+    -> Setup Minikube
+
+            -> minikube
+            -> curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+            -> sudo install minikube-linux-amd64 /usr/local/bin/minikube
+            -> minikube
+            -> minikube status
+            -> minikube start
+            -> minikube status
+
+    -> Setup kubectl
+
+            -> kubectl
+            -> curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+            -> chmod u+x kubectl 
+            -> sudo mv kubectl /usr/local/bin/kubectl
+            -> kubectl 
+
+    -> NOTE: Once the cluster is setup, we are gonna be using "kubectl" to do any sort of work on the cluster 
+        like getting status, creating applications etc 
+
+            -> kubectl get pods
+            -> kubectl get replicasets
+            -> kubectl get deployments
+
+    -> Kubernetes Objects 
+
+        -> By creating an object, you’re telling the Kubernetes system what applications to run in the cluster
+
+        -> Few examples of kubernetes objects include pods, replicasets, deployments etc. 
+
+        -> To work with Kubernetes objects, whether to "create", "modify" or "delete" them, 
+            you’ll need to use a command-line tool called KUBECTL. 
+
+    -> Object Spec & Object Status
+
+        -> Object Spec
+
+            -> The object spec, which you(devops engineer) must provide, 
+            describes your desired state for the object(application), 
+            the characteristics that you want the object to have. 
+
+        -> Object Status
+
+            -> The object status describes the actual state of the object, 
+                and is supplied and updated by the Kubernetes system.
+
+    -> Manage Objects 
+
+        -> Managing Objects inside kubernetes can be done using
+            -> Commands - Imperative Commands
+            -> CODE(YAML) - Declarative Configuration files or Manifests (recommended)
+
+    -> https://kubernetes.io/docs/concepts/overview/working-with-objects/
+
+    -> Pod (Object)
+
+       -> A Pod represents a unit of deployment i.e a "single instance of an application" in Kubernetes.  
+
+    -> Imperative Commands 
+
+        -> Similar To Docker Commands 
+
+            -> kubectl get pods 
+
+            -> kubectl run nginx-pod --image nginx --port=80 
+
+            -> kubectl get pods 
+
+            -> kubectl describe pod nginx-pod
+
+            -> kubectl exec nginx-pod -- cat /usr/share/nginx/html/index.html 
+
+            -> kubectl delete pod nginx-pod
+
+            -> kubectl get pods 
+
+    -> CODE(YAML) 
+
+        -> YAML is a human-readable data serialization language. 
+        It is commonly used for "configuration files" (k8s) and in applications 
+        where data is being stored or transmitted.
+
+        -> YAML focuses on USER FRIENDLINESS & EASY READABILITY
+
+        -> YAML is used to store information about different k8s objects 
+            pods, replicasets, deployments etc 
+
+        -> YAML in k8s 
+
+            -> Simple Key Values 
+
+            -> Dictionaries: Set Of Key Values 
+
+            -> Lists: Multiple Items 
+
+            -> Combinations Of above 
+
+    -> NOTE: Every k8s object has 4 Top Level items in yaml script 
+    
+        -> apiVersion
+        -> kind
+        -> metadata
+        -> spec 
+        
+    -> Pod Using YAML 
+
+        -> Create Pod Definition (pod.yaml) 
+
+        -> kubectl get pods 
+
+        -> kubectl apply -f pod.yaml 
+
+        -> kubectl get pods 
+
+        -> kubectl describe pod nginx-pod
+
+        -> kubectl exec nginx-pod -- cat /usr/share/nginx/html/index.html 
+
+        -> kubectl delete pod nginx-pod
+
+        -> kubectl get pods 
+    
+29th Dec 2025
+=============
+
+    -> NOTE: It is recommended that users create Pods only through a Controller, 
+        and not directly.
+    
+    -> PODS are ephemeral in nature
+
+    -> Pods are not designed to run forever
+
+    -> Pods do not "heal" or repair themselves
+
+    -> Replicaset Object 
+
+        -> Replica Set is often used to guarantee the "availability" of pods 
+
+        -> Replica Set manages pod lifecycle
+
+        -> Replicaset helps you achieve High Availability 
+
+        -> NOTE: In many cases it is recommended to create a Deployment instead of ReplicaSet.
+
+        -> NOTE: ReplicaSets don't allow Updates 
+
+    -> Deployment Object 
+
+        -> A deployment provides "updates" for pods and replicasets.
+
+        -> NOTE: No Warning for Deployment, this is the reason in real world 
+                We never create pods & replicasets directly.
+                We use deployments in real world to manage pods & replicasets.
+
+            -> Deployment -> ReplicaSet -> Pods 
+
+    -> Service Object
+
+        -> A service is an object that acts as an endpoint, which you use to access the pods.
+
+    -> There are different types of kubernetes services present, 
+        to expose an application running on pods
+            -> NodePort         -> access over internet
+            -> Cluster IP       -> access within intranet (private communication)
+            -> LoadBalancer     -> access over internet provided by cloud
+
+    
+    -> NodePort Service
+
+        -> You can contact the NodePort Service, from outside (www) the cluster, 
+            by requesting <NodeIP>:<NodePort>
+
+            -> This is similar to docker using -P (32768 - 61000)
+
+            -> In k8s we use (30000 - 32767)
+    
+    -> Labels & Selectors
+
+        -> Labels: Labels are key/value pairs that are attached to objects.  
+
+        -> Selectors: Using a label selector, we can identify a set of objects.
+
+        -> https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_04_labels.svg
+
+        -> NOTE: Whatever the label we have in the pod definition, 
+                    the same should be in "matchLabels" section
+
+        -> kubectl port-forward --address 0.0.0.0 service/nginx-service 30000:80
+
+        -> kubectl get services 
+
+30th Dec 2025
+=============
+
+    -> Persistent Volumes - PV 
+
+        -> A PersistentVolume (PV) is a piece of "storage" in the cluster
+
+        -> PersistentVolume represents storage independent of pods 
+
+            -> How volumes are independent of containers 
+
+        -> PersistentVolumeClaim - PVC
+
+            -> A PersistentVolumeClaim is a request for storage by a pod
+        
+        -> Storage Class
+
+            -> A StorageClass in Kubernetes defines the type of stoarge to use 
+
+        -> NOTE: 
+            
+            -> Pod -> Volume Claim -> Persitent Volume -> Physical Storage (/mnt/data) 
+
+        -> https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/
+
+
+    -> Namespaces 
+
+        -> In Kubernetes, namespaces provide a mechanism for isolation
+
+        -> Like we have branches in git, we have namespaces in kubernetes 
+
+        -> https://kubernetes.io/docs/tasks/administer-cluster/namespaces/#creating-a-new-namespace
+
+
+    -> Auto Scaling 
+
+        -> In Kubernetes, you can automatically scale a workload using a HorizontalPodAutoscaler (HPA)
+
+        -> https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+
+
+31st Dec 2025
+=============
+
+    -> HorizontalPodAutoscaler Object 
+
+    -> Enable Metrics Server 
+
+        -> minikube addons enable metrics-server
+
+    -> requests: cpu: 200m
+
+        -> 1000 milli cpu = 1 cpu 
+        -> The container is asking for 200 milli cups to be reserved 
+
+    -> limits: cpu: 500m
+
+        -> The container can use upto 500 milli cups
+
+    -> kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+
+    -> kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+
+2nd Jan 2026
+=============
+
+    -> AWS EKS Production Cluster 
+
+        -> Create Master 
+
+        -> Create Worker Node (Across Multiple Zones)
+
+        -> Create Workstation
+
+    -> Create IAM User: eks 
+
+        -> Using eks user we will setup production cluster 
+
+    -> Workstation Setup 
+
+        -> Setup docker
+
+            wget -O get-docker.sh https://get.docker.com && sh get-docker.sh
+            docker
+            sudo usermod -aG docker ubuntu
+
+        -> Setup Kubectl
+
+            kubectl 
+            curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.23.6/bin/linux/amd64/kubectl
+            chmod +x kubectl
+            sudo mv kubectl /usr/local/bin/kubectl
+            kubectl
+            kubectl get pods
+
+        -> Connect Workstation With Cluster To Deploy Applications On Production Cluster 
+
+            aws 
+            sudo apt -y update && sudo apt -y install awscli
+            aws 
+            aws eks list-clusters
+            aws configure
+            aws eks list-clusters
+            kubectl get services
+            cat /home/ubuntu/.kube/config
+            aws eks update-kubeconfig --name <cluster> --region <region-code>
+            aws eks update-kubeconfig --name prod --region us-east-2
+            cat /home/ubuntu/.kube/config
+            kubectl get services
+            kubectl get pods
+            kubectl get deployments
+
+5th Jan 2026
+=============
+
+    -> Final Project - 4
+
+        -> Project 4 - Implement "AUTOMATION" using "Continuous Integration & Continuous Deployment" - CI / CD
+
+        -> Any Application (v1 -> v2 -> v3 etc ) 
+
+            -> For Every Version 
+
+                -> New Requirement -> New Code -> New Build -> New Test -> New Release -> New Depoly 
+
+        -> CI/CD is a devops practice to frequently deliver apps to customers by 
+            introducing AUTOMATION into the STAGES of app development.
+
+        -> CI/CD bridges the gaps between development and operation activities and teams by 
+            enforcing automation in building, testing and deployment of applications.
+
+    -> Jenkins 
+
+        -> Jenkins is an open source automation server. 
+        It helps automate the parts of software development related to 
+        building, testing, and deploying, facilitating CI-CD.
+
+        -> If your tasks are repeatable i.e "done in the same way over a time period" 
+            then JENKINS can simply automate the repeatable process.
+
+    -> Final Project Goal
+
+        -> Developer Writes & Pushes Code To GitHub 
+
+        -> Code Should be Automatically Fetched From GitHub 
+        
+        -> Code Should be Automatically Analysed Using SonarQube
+
+        -> Code Should be Automatically Built Using npm / docker / etc 
+
+        -> Code Should be Automatically Released Using Nexus 
+
+        -> Code Should be Automatically Deployed Using Virtual Machine / Docker Container / K8s Pods  
+
+    -> Jenkins Setup 
+
+        -> AWS: t2.large (2 CPU - 8 GB RAM) - 20 GB Storage 
+        -> AZURE: D2s_v3 (2 CPU - 8 GB RAM) - 30 GB Storage 
+
+        -> Jenkins runs on port 8080 
+        
+        -> NOTE: Based on tools you are working, updated those tool port numbers 
+
+    -> Jenkins Installation Script 
+
+            sudo ss -ntpl
+            
+            sudo apt update -y
+            sudo apt install openjdk-21* -y
+            sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+            https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+            echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+            https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+            /etc/apt/sources.list.d/jenkins.list > /dev/null
+            sudo apt-get update -y && sudo apt-get install jenkins -y
+
+            sudo ss -ntpl
+
+    -> Browse ip:8080
+
+    -> Jenkins Jobs 
+
+        -> You can think of Jenkins Jobs as a particular "task" or "step" in your project
+
+        -> A Job can be as simple as 
+            
+            -> performing code analysis or
+            
+            -> building your source code or 
+            
+            -> publish an artifact or 
+            
+            -> deploy an application or
+            
+            -> sending an email etc
+
+7th Jan 2026
+=============
+
+    -> Build Triggers 
+
+        -> Set up automated actions that start your build based on specific events, 
+            like "code changes" or scheduled times.
+
+        -> scheduled times i.e Schedulers (cron jobs)
+
+            -> Schedulers are good for operational actitivies 
+
+        -> Automate Login App Deployment 
+
+            -> Repo: https://github.com/ravi2krishna/login-2516.git
+            
+            -> Remove Sample Files: /var/www/html
+
+            -> Clone App: sudo git clone https://github.com/ravi2krishna/login-2516.git /var/www/html 
+
+    
+    -> Source Code Management
+        
+        -> Connect and manage your code repository to 
+        automatically pull the latest code for your builds.
+
+    -> For Automating Login App Deployment 
+
+        -> Source Code Management: None 
+
+        -> Triggers: No GitHub Option 
+
+        -> Post-build Actions: No Notifications 
+
+    -> Jenkins Plugins 
+
+        -> Plugins are the primary means of enhancing the functionality of Jenkins
+
+        -> Plugins Registry: https://plugins.jenkins.io/
+
+    -> Jenkins Permissions Issues 
+
+        sudo visudo
+        jenkins ALL= NOPASSWD: ALL
+        # opens in nano editor (control+o enter control+x)
+        sudo systemctl restart jenkins
+
+    -> Earlier we had Time Based Job Triggers i.e using a specific time interval 
+        we can execute jobs or manually run jobs, not good for development workflows 
+
+    -> Web Hooks 
+
+        -> Jenkins is an Open-Source Continuous Integration (CI) tool that is extensively 
+        used by developers to automate the testing and deployment of their applications.
+
+        -> A Webhook is a mechanism to automatically trigger the build(jobs)
+            of a Jenkins project in response to a commit pushed to a Git repository.
+
+        -> GitHub To Jenkins 
+
+        -> Jenkins To GitHub
+
+9th Jan 2026
+=============
+
+    -> Add Webhook in GitHub Repository
+
+        -> http://3.147.77.183:8080/github-webhook/
+
+    -> Worker Agents 
+
+        -> Install SSH Build Agents Plugin     new file created
