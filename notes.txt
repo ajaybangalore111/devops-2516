@@ -2558,3 +2558,35 @@
     -> Worker Agents 
 
         -> Install SSH Build Agents Plugin     
+
+12th Jan 2026
+=============
+
+    -> Install Nodejs From Source 
+
+        -> https://nodesource.com/products/distributions
+
+            sudo apt-get install -y curl
+            curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+            node -v
+            npm -v
+        
+    -> Jenkins & Email (gmail) Integration
+
+        -> You should enable two factor Authentication From Gmail Account 
+            
+        -> https://myaccount.google.com/apppassword
+
+    -> Jenkins home page > Manage Jenkins > Configure System > Email Notification > 
+
+        Enter the SMTP server name under ‘Email Notification’. 
+        Click the ‘Advanced’ button and then click the checkbox 
+        next to the ‘Use SMTP Authentication’ option. Now, set the following fields.
+            SMTP server name : smtp.gmail.com
+            User name: user_email_id@gmail.com
+            Password: 123456 [ not gmail password ] { app password }
+            Enable Two Factor AuthenticationOn From Gmail Account 
+            https://myaccount.google.com/apppassword
+            Use SSL : Checked
+            SMTP Port: 465
