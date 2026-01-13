@@ -2590,3 +2590,101 @@
             https://myaccount.google.com/apppassword
             Use SSL : Checked
             SMTP Port: 465
+
+
+13th Jan 2026
+=============
+
+    -> Jenkins Pipeline 
+
+        -> A continuous integration and continuous deployment (CI/CD) pipeline 
+            is a "series of steps" that must be performed in order to deliver 
+            a new version of software.
+
+        -> "series of steps"
+
+            -> fetch latest version code 
+            -> perform code analysis on latest version code 
+            -> build latest version code 
+            -> update latest version of artifacts 
+            -> deploy latest version of artifacts to servers 
+
+        -> https://www.jenkins.io/doc/book/pipeline/
+
+        -> Jenkins Pipeline (or simply "Pipeline" with a capital "P") is a 
+        suite of plugins which supports implementing and integrating 
+        continuous delivery pipelines into Jenkins.
+
+        -> The definition of a Jenkins Pipeline is written into a text file (called a Jenkinsfile)
+        which in turn can be committed to a project’s source control repository. 
+        This is the foundation of "Pipeline-as-code".
+
+    -> To Work with Pipelines Install Following List OF Plugins 
+
+        -> Pipeline Plugin 
+        -> Workspace Cleanup Plugin 
+        -> Pipeline Utility Steps plugin
+
+    -> Jenkins Project Pipeline
+
+        pipeline {
+        agent any
+        stages {
+            // Stage For Code Analysis
+            stage('Sonar Analysis') {
+                steps {
+                    sh 'sudo docker run --rm -e SONAR_HOST_URL="http://18.119.106.139:9000" -v ".:/usr/src" sonarsource/sonar-scanner-cli -Dsonar.token="sqp_8fc0d046e09580b25c70ce208e1fbaedf3f46876" -Dsonar.projectKey=react'
+                }
+            }
+            // Stage For Building Analysis
+            stage('Build Artifact') {
+                steps {
+                    sh 'npm install && npm run build'
+                }
+            }
+            // Stage For Artifacts i.e Archiving Artifacts
+            stage('Release Artifact') {
+                steps {
+                script {
+                    def packageJson = readJSON file: 'package.json'
+                    def packageJSONVersion = packageJson.version
+                    echo "${packageJSONVersion}"
+                    sh "zip react-${packageJSONVersion}.zip -r build/*"
+                    sh "curl -v -u admin:Admin123* --upload-file react-${packageJSONVersion}.zip http://18.119.106.139:8081/repository/react/"
+                }
+            }
+            }
+            // Stage For Deploying 
+            stage('Deploy') {
+                steps {
+                script {
+                    def packageJson = readJSON file: 'package.json'
+                    def packageJSONVersion = packageJson.version
+                    echo "${packageJSONVersion}"
+                    sh "curl -u admin:Admin123* -X GET \'http://18.119.106.139:8081/repository/react/react-${packageJSONVersion}.zip\' --output react-'${packageJSONVersion}'.zip"
+                    sh 'sudo rm -rf /var/www/html/*'
+                    sh "sudo unzip -o react-'${packageJSONVersion}'.zip"
+                    sh "sudo cp -r build/* /var/www/html"
+                }
+            }
+            }
+            // Stage For Cleaning Up 
+            stage('Cleanup') {
+                steps {
+                    cleanWs()
+                }
+            }
+        }
+    }
+
+
+-> Project You Should Implement With Jenkins Piepline On Top Of Above
+
+    -> Add New Stages For Following
+
+        -> Perform Docker Build and Tag the Image using version found in package.json 
+
+        -> Push the Image Along With Tag To Docker Registry 
+
+        -> Deploy the Image On EKS Cluster i.e Production Cluster 
+
